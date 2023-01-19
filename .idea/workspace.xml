@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e0e8ec-895a-4c9a-9c90-9e99cea5e7a3" name="Changes" comment="" />
+    <list default="true" id="19e0e8ec-895a-4c9a-9c90-9e99cea5e7a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login-system/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login-system/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login-system/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/login-system/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login-system/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/login-system/signup.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/arsoppgave-1" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,7 +52,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "discord-application",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -73,7 +78,7 @@
       <workItem from="1673871995084" duration="278000" />
       <workItem from="1673976132170" duration="2117000" />
       <workItem from="1673978269948" duration="10525000" />
-      <workItem from="1674137919101" duration="112000" />
+      <workItem from="1674137919101" duration="5505000" />
     </task>
     <servers />
   </component>
