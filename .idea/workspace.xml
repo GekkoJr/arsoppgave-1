@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e0e8ec-895a-4c9a-9c90-9e99cea5e7a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login-system/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login-system/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login-system/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/login-system/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login-system/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/login-system/signup.php" afterDir="false" />
-    </list>
+    <list default="true" id="19e0e8ec-895a-4c9a-9c90-9e99cea5e7a3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Gabriel Solem/OneDrive - Osloskolen/Desktop/php-8.2.1-Win32-vs16-x64/php.ini-development",
+    "last_opened_file_path": "C:/xampp/htdocs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,6 +74,7 @@
       <workItem from="1673976132170" duration="2117000" />
       <workItem from="1673978269948" duration="10525000" />
       <workItem from="1674137919101" duration="5505000" />
+      <workItem from="1674143460857" duration="8792000" />
     </task>
     <servers />
   </component>
