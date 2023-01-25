@@ -1,0 +1,22 @@
+/* Stylesheet for Digi store AS */
+
+main {
+    max-width : 1000px;
+    margin: auto;
+}
+
+.img-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius : 10px;
+}
+
+.product-gallery {
+    display : flex;
+    gap: 15px;
+}
+
+.mini-txt *{
+    margin: 0 auto;
+}

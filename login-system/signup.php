@@ -19,9 +19,9 @@ if ($num > 0) {
 } else {
 
     $navn = stripslashes($navn);
-    $navn = mysqli_real_escape_string($navn);
+    $navn = mysqli_real_escape_string($connect, $navn);
     $mail = stripslashes($mail);
-    $mail = mysqli_real_escape_string($mail);
+    $mail = mysqli_real_escape_string($connect, $mail);
 $pass = stripslashes($pass);
 $pass = mysqli_real_escape_string($connect, $pass);
 
@@ -35,3 +35,4 @@ if (mysqli_query($connect, $query)) {
 }
 
 mysqli_close($connect);}
+
