@@ -42,6 +42,7 @@ if ($_SESSION['id'] == 5) {
         //sjekker om filformattet skal støttes
         if ($imageType != 'jpg' && $imageType != 'png' && $imageType != 'gif' && $imageType != 'jpeg') {
             echo "filformat ikke akseptert";
+            $ok = FALSE;
         }
 
         // laster opp bilde om det passerte alle sjekkende
