@@ -27,7 +27,9 @@ $proNavn = $rows[$count]['proNavn'];
 $imgSrc = "product_img/" . $rows[$count]['image'];
 $pris = $rows[$count]['pris'];;
 $miniBe = $rows[$count]['miniBeskriv'];
+$id = $rows[$count]['proID'];
 ?>
+        <a href=produkt.php?id="<?php echo $id ?>">
     <div class="product">
         <div class="img-container">
             <img src="<?php echo $imgSrc ?>" alt="<?php echo $proNavn ?>">
@@ -38,6 +40,7 @@ $miniBe = $rows[$count]['miniBeskriv'];
             <p><?php echo $pris . ' kr'?></p>
         </div>
     </div>
+        </a>
 
 <?php } ?>
 </div>

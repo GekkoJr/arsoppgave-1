@@ -6,8 +6,6 @@ $navn = $_POST['navn'];
 $mail = $_POST['mail'];
 $pass = $_POST['pass'];
 
-//TODO: sql injection proofing
-
 
 $query0 = "SELECT * FROM brukere WHERE mail = '$mail'";
 $eksi = mysqli_query($connect, $query0);

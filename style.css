@@ -17,6 +17,57 @@ main {
     gap: 15px;
 }
 
-.mini-txt *{
+.mini-txt {
     margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    border: 1px solid black;
+}
+
+/*Login form style */
+
+#login-form {
+    width: 500px;
+    background-color: darkgrey;
+    margin: auto;
+    border-radius: 10px;
+
+}
+
+#login-form form {
+    width: 85%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#login-form form label {
+    display: block;
+}
+
+#login-form form input:not(#sub-btn) {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+#sub-btn {
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+#login-form form p, #sub-btn {
+    width: 75%;
+
 }
