@@ -5,7 +5,7 @@ $connect ->select_db("users");
 $navn = $_POST['navn'];
 $mail = $_POST['mail'];
 $pass = $_POST['pass'];
-
+$etterNavn = $_POST['etterNavn'];
 
 $query0 = "SELECT * FROM brukere WHERE mail = '$mail'";
 $eksi = mysqli_query($connect, $query0);
@@ -25,7 +25,7 @@ $pass = mysqli_real_escape_string($connect, $pass);
 $pass = password_hash($pass, CRYPT_SHA512);
 
 
-$query = "INSERT INTO brukere (navn, mail, passord) VALUES ('$navn', '$mail', '$pass')";
+$query = "INSERT INTO brukere (navn, etternavn, mail, passord, admin) VALUES ('$navn', '$etterNavn', '$mail', '$pass', 0)";
 
 if (mysqli_query($connect, $query)) {
     echo "ny bruker opprettet, du kan nå logge inn";

@@ -2,7 +2,7 @@
 session_start();
 include('../tilkoble.php');
 $connect->select_db('users');
-if ($_SESSION['id'] == 5) {
+if ($_SESSION['admin']) {
     ?>
 <html>
 <body>

@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 // sjekker om du er logget inn som admin aka id 5
-if ($_SESSION['id'] == 5) {
+if ($_SESSION['admin']) {
         include('../tilkoble.php');
         $connect->select_db("users");
 

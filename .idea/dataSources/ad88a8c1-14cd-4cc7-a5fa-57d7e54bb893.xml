@@ -13026,7 +13026,7 @@ usergroup</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="2575" parent="518" name="ID">
-      <AutoIncrement>15</AutoIncrement>
+      <AutoIncrement>17</AutoIncrement>
       <DasType>smallint(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -13036,64 +13036,74 @@ usergroup</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="2577" parent="518" name="mail">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="2577" parent="518" name="etternavn">
+      <DasType>tinytext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="2578" parent="518" name="passord">
+    <column id="2578" parent="518" name="mail">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="2579" parent="518" name="PRIMARY">
+    <column id="2579" parent="518" name="passord">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="2580" parent="518" name="admin">
+      <DasType>tinyint(1)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="2581" parent="518" name="PRIMARY">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="2580" parent="518" name="PRIMARY">
+    <key id="2582" parent="518" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="2581" parent="519" name="proID">
+    <column id="2583" parent="519" name="proID">
       <AutoIncrement>10</AutoIncrement>
       <DasType>smallint(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="2582" parent="519" name="image">
+    <column id="2584" parent="519" name="image">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="2583" parent="519" name="proNavn">
+    <column id="2585" parent="519" name="proNavn">
       <DasType>varchar(80)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="2584" parent="519" name="miniBeskriv">
+    <column id="2586" parent="519" name="miniBeskriv">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="2585" parent="519" name="beskrivelse">
+    <column id="2587" parent="519" name="beskrivelse">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="2586" parent="519" name="pris">
+    <column id="2588" parent="519" name="pris">
       <DasType>float|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="2587" parent="519" name="PRIMARY">
+    <index id="2589" parent="519" name="PRIMARY">
       <ColNames>proID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="2588" parent="519" name="PRIMARY">
+    <key id="2590" parent="519" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
