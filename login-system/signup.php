@@ -22,6 +22,7 @@ if ($num > 0) {
     $mail = mysqli_real_escape_string($connect, $mail);
 $pass = stripslashes($pass);
 $pass = mysqli_real_escape_string($connect, $pass);
+$pass = password_hash($pass, CRYPT_SHA512);
 
 
 $query = "INSERT INTO brukere (navn, mail, passord) VALUES ('$navn', '$mail', '$pass')";

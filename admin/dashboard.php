@@ -1,6 +1,8 @@
 <?php
 session_start();
-if ($_SESSION['id'] === 5) {
+include('../tilkoble.php');
+$connect->select_db('users');
+if ($_SESSION['id'] == 5) {
     ?>
 <html>
 <body>
@@ -15,7 +17,14 @@ if ($_SESSION['id'] === 5) {
 
 </header>
 <main>
-    <h2>Velkommen tilbake </h2>
+    <h2>Velkommen tilbake
+    <?php
+    $id = $_SESSION['id'];
+    $personNavn = mysqli_query($connect,"SELECT navn FROM brukere WHERE ID='$id'");
+    $personNavn = mysqli_fetch_array($personNavn, MYSQLI_ASSOC);
+    echo $personNavn['navn']
+    ?>
+    </h2>
 </main>
 </body>
 </html>
