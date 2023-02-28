@@ -14,14 +14,14 @@
 <main>
 <div id="login-form">
     <form action="login.php" method="post"> <!-- kan legge til validdering senere onsubmit="return validering()"--->
-        <p>
-            <label>E-Mail</label><input type="email" id="email" name="email" placeholder="per@permail.com">
-        </p>
-        <p>
-            <label>Passord</label><input type="password" id="password" name="password">
-        </p>
+        <div>
+            <label>E-Mail<input type="email" id="email" name="email" placeholder="per@permail.com"></label>
+        </div>
+       <div>
+            <label>Passord<input type="password" id="password" name="password"></label>
+        </div>
         <button type="submit" id="sub-btn">Logg Inn</button>
-        <p>Har du ikke en bruker <a style="color: blue" class="link-outstanding" href="signup.html">Lag en her</a></p>
+        <p>Har du ikke en bruker <a style="color: blue" href="signup.html">Lag en her</a></p>
     </form></div></main>
 </body>
 

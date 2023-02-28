@@ -1,5 +1,7 @@
 /* Stylesheet for Digi store AS */
 
+
+/* Nettbutikk style */
 main {
     max-width : 1000px;
     margin: auto;
@@ -67,6 +69,10 @@ a:hover {
     border: none;
 }
 
-#login-form form p, #sub-btn {
+#login-form form div, #sub-btn {
     width: 75%;
+}
+
+#login-form form div {
+    margin-bottom: 10px;
 }

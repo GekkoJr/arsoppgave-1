@@ -3,7 +3,7 @@ session_start();
 include("tilkoble.php");
 $connect->select_db("users");
 
-$query ="SELECT proID, image, proNavn, miniBeskriv, pris FROM produkter";
+$query = "SELECT proID, image, proNavn, miniBeskriv, pris FROM produkter";
 $result = mysqli_query($connect, $query);
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 $count = mysqli_num_rows($result);
@@ -15,36 +15,38 @@ $count = mysqli_num_rows($result);
 <head>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
+<body>
 <header>
 
 </header>
 <main>
     <div class="product-gallery">
-    <?php
-while ($count !== 0) {
-$count --;
-$proNavn = $rows[$count]['proNavn'];
-$imgSrc = "product_img/" . $rows[$count]['image'];
-$pris = $rows[$count]['pris'];;
-$miniBe = $rows[$count]['miniBeskriv'];
-$id = $rows[$count]['proID'];
-?>
-        <a href=produkt.php?id="<?php echo $id ?>">
-    <div class="product">
-        <div class="img-container">
-            <img src="<?php echo $imgSrc ?>" alt="<?php echo $proNavn ?>">
-        </div>
-        <div class="mini-txt">
-            <h4><?php echo $proNavn ?></h4>
-            <p class="mini-beskriv"><?php echo $miniBe ?></p>
-            <p><?php echo $pris . ' kr'?></p>
-        </div>
-    </div>
-        </a>
+        <?php
+        while ($count !== 0) {
+            $count--;
+            $proNavn = $rows[$count]['proNavn'];
+            $imgSrc = "product_img/" . $rows[$count]['image'];
+            $pris = $rows[$count]['pris'];;
+            $miniBe = $rows[$count]['miniBeskriv'];
+            $id = $rows[$count]['proID'];
+            ?>
+            <a href=produkt.php?id="<?php echo $id ?>">
+                <div class="product">
+                    <div class="img-container">
+                        <img src="<?php echo $imgSrc ?>" alt="<?php echo $proNavn ?>">
+                    </div>
+                    <div class="mini-txt">
+                        <h4><?php echo $proNavn ?></h4>
+                        <p class="mini-beskriv"><?php echo $miniBe ?></p>
+                        <p><?php echo $pris . ' kr' ?></p>
+                    </div>
+                </div>
+            </a>
 
-<?php } ?>
-</div>
+        <?php } ?>
+    </div>
 </main>
+</body>
 </html>
 
 
