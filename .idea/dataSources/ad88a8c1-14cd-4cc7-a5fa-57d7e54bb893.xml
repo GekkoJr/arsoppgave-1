@@ -1201,12 +1201,12 @@ users|schema||gekk||UPDATE|G</Grants>
     <schema id="327" parent="1" name="phpmyadmin">
       <CollationName>utf8_bin</CollationName>
     </schema>
-    <schema id="328" parent="1" name="tegneseriefigurer">
-      <CollationName>utf8_danish_ci</CollationName>
-    </schema>
-    <schema id="329" parent="1" name="users">
+    <schema id="328" parent="1" name="users">
       <Current>1</Current>
       <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="329" parent="1" name="tegneseriefigurer">
+      <CollationName>utf8_danish_ci</CollationName>
     </schema>
     <user id="330" parent="1" name="gekk"/>
     <user id="331" parent="1" name="pma">
@@ -2070,21 +2070,21 @@ users|schema||gekk||UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8_bin</CollationName>
     </table>
-    <table id="516" parent="328" name="blad">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8_danish_ci</CollationName>
-    </table>
-    <table id="517" parent="328" name="figur">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8_danish_ci</CollationName>
-    </table>
-    <table id="518" parent="329" name="brukere">
+    <table id="516" parent="328" name="brukere">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="519" parent="329" name="produkter">
+    <table id="517" parent="328" name="produkter">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="518" parent="329" name="blad">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8_danish_ci</CollationName>
+    </table>
+    <table id="519" parent="329" name="figur">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8_danish_ci</CollationName>
     </table>
     <column id="520" parent="335" name="PLUGIN_NAME">
       <DasType>varchar(64)|0s</DasType>
@@ -12964,146 +12964,156 @@ usergroup</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="2563" parent="516" name="blad_id">
-      <AutoIncrement>5</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="2564" parent="516" name="bladnavn">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <index id="2565" parent="516" name="PRIMARY">
-      <ColNames>blad_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="2566" parent="516" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="2567" parent="517" name="figur_id">
-      <AutoIncrement>11</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="2568" parent="517" name="figurnavn">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="2569" parent="517" name="aarstall">
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="2570" parent="517" name="blad_id">
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="2571" parent="517" name="FK_figur_blad">
-      <ColNames>blad_id</ColNames>
-      <RefColNames>blad_id</RefColNames>
-      <RefTableName>blad</RefTableName>
-    </foreign-key>
-    <index id="2572" parent="517" name="PRIMARY">
-      <ColNames>figur_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="2573" parent="517" name="FK_figur_blad_idx">
-      <ColNames>blad_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="2574" parent="517" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="2575" parent="518" name="ID">
-      <AutoIncrement>17</AutoIncrement>
+    <column id="2563" parent="516" name="ID">
+      <AutoIncrement>23</AutoIncrement>
       <DasType>smallint(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="2576" parent="518" name="navn">
+    <column id="2564" parent="516" name="navn">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="2577" parent="518" name="etternavn">
+    <column id="2565" parent="516" name="etternavn">
       <DasType>tinytext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="2578" parent="518" name="mail">
+    <column id="2566" parent="516" name="mail">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="2579" parent="518" name="passord">
+    <column id="2567" parent="516" name="passord">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="2580" parent="518" name="admin">
+    <column id="2568" parent="516" name="admin">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="2581" parent="518" name="PRIMARY">
+    <index id="2569" parent="516" name="PRIMARY">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="2582" parent="518" name="PRIMARY">
+    <key id="2570" parent="516" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="2583" parent="519" name="proID">
-      <AutoIncrement>10</AutoIncrement>
+    <column id="2571" parent="517" name="proID">
+      <AutoIncrement>14</AutoIncrement>
       <DasType>smallint(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="2584" parent="519" name="image">
-      <DasType>varchar(150)|0s</DasType>
+    <column id="2572" parent="517" name="image">
+      <DasType>varchar(555)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="2585" parent="519" name="proNavn">
+    <column id="2573" parent="517" name="proNavn">
       <DasType>varchar(80)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="2586" parent="519" name="miniBeskriv">
+    <column id="2574" parent="517" name="miniBeskriv">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="2587" parent="519" name="beskrivelse">
+    <column id="2575" parent="517" name="beskrivelse">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="2588" parent="519" name="pris">
+    <column id="2576" parent="517" name="pris">
       <DasType>float|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="2589" parent="519" name="PRIMARY">
+    <column id="2577" parent="517" name="dirNavn">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="2578" parent="517" name="Antall">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <index id="2579" parent="517" name="PRIMARY">
       <ColNames>proID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="2590" parent="519" name="PRIMARY">
+    <key id="2580" parent="517" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="2581" parent="518" name="blad_id">
+      <AutoIncrement>5</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="2582" parent="518" name="bladnavn">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="2583" parent="518" name="PRIMARY">
+      <ColNames>blad_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="2584" parent="518" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="2585" parent="519" name="figur_id">
+      <AutoIncrement>11</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="2586" parent="519" name="figurnavn">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="2587" parent="519" name="aarstall">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="2588" parent="519" name="blad_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="2589" parent="519" name="FK_figur_blad">
+      <ColNames>blad_id</ColNames>
+      <RefColNames>blad_id</RefColNames>
+      <RefTableName>blad</RefTableName>
+    </foreign-key>
+    <index id="2590" parent="519" name="PRIMARY">
+      <ColNames>figur_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="2591" parent="519" name="FK_figur_blad_idx">
+      <ColNames>blad_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="2592" parent="519" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
