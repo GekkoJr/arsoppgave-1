@@ -20,6 +20,7 @@ if(password_verify($password, $row['passord'])) {
     $_SESSION['id'] = $row['ID'];
     if ($row['admin'] == 1) {
         $_SESSION['admin'] = True;
+        header("Location: ../admin/dashboard.php");
     } else {
         $_SESSION['admin'] = False;
     }
