@@ -83,7 +83,7 @@ echo "-- hva med hit--" . $ok;
 
         }
         $arrayIMG = implode(" ", $images);
-        $query = "INSERT INTO produkter (image , proNavn, miniBeskriv, beskrivelse, pris, dirNavn) VALUES ('$arrayIMG' , '$pNavn', '$miBe', '$beskriv', '$pris', '$pNav')";
+        $query = "INSERT INTO produkter (image , proNavn, miniBeskriv, beskrivelse, pris, dirNavn) VALUES ('$arrayIMG' , '$pNavn', '$miBe', '$beskriv', '$pris', '$pNavn')";
         if($masterOK) {
         mysqli_query($connect, $query);
         }
