@@ -35,7 +35,6 @@ if ($_SESSION['admin']) {
         $filename = $_FILES['uploadImg']['name'][$key];
         $imageType = strtolower(pathinfo($upload_file, PATHINFO_EXTENSION));
 
-        echo "check 1" . $upload_file;
 
         // spørringen for å laste opp til db
 
@@ -63,12 +62,11 @@ if ($_SESSION['admin']) {
             echo "filformat ikke akseptert";
             $ok = FALSE;
         }
-echo "-- hva med hit--" . $ok;
+
         // laster opp bilde om det passerte alle sjekkende
         if ($ok == FALSE || $masterOK == false) {
             echo "bilde ble ikke opplasted";
         } else {
-            echo "-- her pls--";
             if (move_uploaded_file($_FILES['uploadImg']['tmp_name'][$key], $upload_file)) {
                 echo 'upload succes';
                 echo $upload_file;
@@ -79,7 +77,7 @@ echo "-- hva med hit--" . $ok;
             }
 
         }
-        echo "-- hit da?";
+
 
         }
         $arrayIMG = implode(" ", $images);

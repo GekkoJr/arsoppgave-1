@@ -25,7 +25,7 @@ if(password_verify($password, $row['passord'])) {
         $_SESSION['admin'] = False;
     }
 } else {
-    echo "pain";
+    echo "Feil bruker navn eller passord";
 }
 
 $count = mysqli_num_rows($login); // sjekker hvor mange rader som eksiterer med de spesifikasjonene og lagrer de

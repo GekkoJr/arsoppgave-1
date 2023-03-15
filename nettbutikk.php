@@ -33,7 +33,7 @@ $count = mysqli_num_rows($result);
             $imgArr = explode(' ', $imgArr);
             $imgSrc = "product_img/" . $dirNavn . "/" . $imgArr[0];
             ?>
-            <a href=produkt.php?id="<?php echo $id ?>">
+            <a href=produkt.php?id=<?php echo $id ?>>
                 <div class="product">
                     <div class="img-container">
                         <img src="<?php echo $imgSrc ?>" alt="<?php echo $proNavn ?>">
