@@ -131,12 +131,17 @@ a:hover {
     flex: 1;
 }
 
+.kjop-container form {
+    width: 95%;
+    margin: auto;
+}
+
 .produkt {
     display: flex;
 }
 
 .kjop-container form button, input[name="antall"] {
-    width: 95%;
+    width: 100%;
 
 }
 
@@ -159,6 +164,11 @@ header div div img {
     padding: 7px;
     border-radius: 100%;
     object-fit: contain;
+}
+
+header div img {
+    height: 30px;
+    width: auto;
 }
 
 .logo-bar {

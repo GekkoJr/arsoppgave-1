@@ -35,10 +35,6 @@ if ($_SESSION['admin']) {
         $filename = $_FILES['uploadImg']['name'][$key];
         $imageType = strtolower(pathinfo($upload_file, PATHINFO_EXTENSION));
 
-
-        // spørringen for å laste opp til db
-
-
         // sjekker om det er et faktisk bilde ved å se om det har dimensjoner
         if(isset($_POST['upload'])) {
             $sjekk = getimagesize($temp_name);

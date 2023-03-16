@@ -16,9 +16,7 @@ $count = mysqli_num_rows($result);
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<header>
-
-</header>
+<?php include("komponenter/header.html") ?>
 <main>
     <div class="product-gallery">
         <?php

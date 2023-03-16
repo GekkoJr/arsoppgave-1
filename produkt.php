@@ -26,7 +26,38 @@ $pris = $produkt['pris']
 </head>
 
 <body>
-<?php include("komponenter/header.html")?>
+<?php include("komponenter/header.html");
+// sjekker om den ble kjøpt og legger til i handlekurv
+error_reporting(0); // fordi linjen under kan gi feilmeldinger skrur vi de av
+if($_POST['antall']) {
+    if($_SESSION['handlekurv']) {
+        $sjekk = true;
+        $index = 0;
+        // sjekker om den allerede ligger i handlekurven, hvis så legger til flere
+        foreach ($_SESSION['handlekurv'] as $element) {
+            if($element = $produktID) {
+                $sjekk = false;
+                $_SESSION['mengde'][$index] += $_POST['antall'];
+                $index++;
+            }
+        }
+        if($sjekk) {
+            array_push($_SESSION['handlekurv'], $produktID);
+            array_push($_SESSION['mengde'], $_POST['antall']);
+        }
+    } else {
+        $_SESSION['handlekurv'] = array();
+        $_SESSION['mengde'] = array();
+        array_push($_SESSION['handlekurv'], $produktID);
+        array_push($_SESSION['mengde'], $_POST['antall']);
+    }
+    ?>
+    <script>
+        alert("produktet er lagt i handlevognen")
+    </script>
+    <?php
+}
+?>
 <main>
     <h1><?php echo $proNavn ?></h1>
     <p><?php echo $miniBeskriv ?></p>
@@ -56,7 +87,7 @@ $pris = $produkt['pris']
                 <button type="submit">Legg til i handlevogn</button>
             </form>
         </div>
-
+        <hr>
     </div>
 </main>
 </body>
