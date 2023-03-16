@@ -175,3 +175,7 @@ header div img {
     display: flex;
     justify-content: space-between;
 }
+
+nav a:hover {
+    border:0px none transparent;
+}
