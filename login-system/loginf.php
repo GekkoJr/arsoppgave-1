@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<?php include("../komponenter/header.html") ?>
 <main>
 <div id="login-form">
     <form action="login.php" method="post"> <!-- kan legge til validdering senere onsubmit="return validering()"--->
@@ -21,7 +22,7 @@
             <label>Passord<input type="password" id="password" name="password"></label>
         </div>
         <button type="submit" id="sub-btn">Logg Inn</button>
-        <p>Har du ikke en bruker <a style="color: blue" href="signup.html">Lag en her</a></p>
+        <p>Har du ikke en bruker <a style="color: blue" href="signupf.php">Lag en her</a></p>
     </form></div></main>
 </body>
 

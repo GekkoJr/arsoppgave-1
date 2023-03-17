@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+<?php include("../komponenter/header.html") ?>
 <main>
     <div id="login-form">
 
@@ -16,7 +17,7 @@
         <div><label>E-Mail<input type="email" id="mail" name="mail" placeholder="mail@mail.com"></label></div>
         <div><label>Passord<input type="password" id="pass" name="pass"></label></div>
         <button type="submit" id="sub-btn">Lag bruker</button>
-        <p>Har du allerede en bruker <a style="color: blue" href="login.html">Logg inn</a></p>
+        <p>Har du allerede en bruker <a style="color: blue" href="loginf.php">Logg inn</a></p>
     </form>
     </div>
 
