@@ -22,3 +22,5 @@ $index++;
     // add en mulighet for å fjerne alt
 }
 
+?>
+<img src="https://http.cat/102">

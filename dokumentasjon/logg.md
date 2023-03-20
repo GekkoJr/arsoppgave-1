@@ -30,4 +30,4 @@ Hele innlogging systemet og basic produkt oppretning
 - en preview av hvordan produktet vil se ut 
 
 ### ider?
-- Bytte til en api og js for database??? 
+- Bytte til en api og js for database??? (burde ha vært gjort men for sent å snu)

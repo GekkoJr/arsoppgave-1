@@ -1,3 +1,17 @@
+<?php
+session_start();
+if($_SESSION['id']) {
+    if($_SESSION['admin'] = True) {
+    header('Location: ../admin/dashboard.php');
+    } elseif ($_SESSION['order'] = True) {
+        header('Location: ../order/dashboard.php');
+    } else {
+        header('Location: ../kundesider/dashboard.php');
+    }
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 

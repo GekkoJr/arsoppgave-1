@@ -13,9 +13,7 @@ if ($_SESSION['admin']) {
     <link href="../style.css" rel="stylesheet">
 
 </head>
-<header>
-
-</header>
+<?php include("../komponenter/header.html"); ?>
 <main>
     <h2>Velkommen tilbake
     <?php
