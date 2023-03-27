@@ -20,6 +20,11 @@ Hele innlogging systemet og basic produkt oppretning
 - Produktene kan nå ha flere bilder
 - Handlekurv kan fjerne ting
 
+### Uke  3 plan 
+- [ ] Nytt design
+- [ ] Farger og designmanual
+- [ ] bytte til scss
+
 ### Hva skal skje videre
 - Brukertesting
 - La kunden bestille

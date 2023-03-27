@@ -1,6 +1,6 @@
 <?php
 session_start();
-//error_reporting(0);
+error_reporting(0);
 
 include("../tilkoble.php");
 $connect->select_db("users");
@@ -54,6 +54,11 @@ $connect->select_db("users");
 
 
     ?>
+    <div>
+        <form action="checkoutRedirect.php">
+            <button>Gå til checkout</button>
+        </form>
+    </div>
 </main>
 </body>
 </html>

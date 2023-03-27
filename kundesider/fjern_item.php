@@ -19,7 +19,7 @@ $index++;
     }
 
 } elseif ($_POST['all']) {
-    // add en mulighet for å fjerne alt
+    //TODO add en mulighet for å fjerne alt
 }
 
 ?>
