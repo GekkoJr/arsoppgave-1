@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 if($_SESSION['id']) {
     if($_SESSION['admin'] = True) {
     header('Location: ../admin/dashboard.php');

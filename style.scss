@@ -1,0 +1,233 @@
+/* Stylesheet for Digi store AS */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.light {
+    $background: white;
+    $text: black;
+    $contrast: lightblue;
+}
+
+body {
+    font-family: "Roboto", verdana, arial, helvetica, sans-serif;
+    font-size: 18px;
+}
+
+/* Nettbutikk style */
+main, .standard-width {
+    max-width : 1000px;
+    margin: auto;
+}
+
+.img-container img {
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+    border-radius : 10px;
+}
+
+.product-gallery {
+    display : flex;
+    gap: 15px;
+
+    a div {
+        max-width: 300px;
+    }
+}
+
+.mini-txt {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    border: 1px solid black;
+}
+
+/*Login form style */
+
+#login-form {
+    width: 500px;
+    background-color: lightgray;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 50px;
+
+}
+
+#login-form form {
+    width: 85%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#login-form form label {
+    display: block;
+}
+
+#login-form form input:not(#sub-btn) {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+#sub-btn {
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+#login-form form div, #sub-btn {
+    width: 75%;
+}
+
+#login-form form div {
+    margin-bottom: 10px;
+}
+
+/* produkt bilde carusel */
+.img-slide-container {
+    flex: 2;
+}
+
+.slide-img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-top: 30px;
+    display: inline;
+}
+
+.slide {
+    display: none;
+    border-radius: 10px;
+    align-content: center;
+
+}
+
+
+.tilbake, .frem {
+  cursor: pointer;
+/* position absolute*/
+    top: 200px;
+    width: auto;
+    padding: 4px;
+    color: lightslategray;
+    font-weight: bold;
+    font-size: 28px;
+    transition: 0.6s ease;
+    border-radius: 5px;
+
+}
+
+.frem {
+    left: 0
+}
+
+.slide-overgang {
+    animation-name: overgang;
+    animation-duration: 1.4s;
+}
+
+@keyframes overgang {
+    from {opacity: .4} to {opacity: 1}
+}
+
+.kjop-container {
+    background-color: lightslategray;
+    height: 350px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.kjop-container form {
+    width: 95%;
+    margin: auto;
+}
+
+.produkt {
+    display: flex;
+}
+
+.kjop-container form button, input[name="antall"] {
+    width: 100%;
+
+}
+header div div, nav {
+    display: flex;
+    align-items: center;
+}
+
+header div div a img {
+    height: 30px;
+    width: auto;
+}
+
+header div div a {
+    text-decoration: none;
+    border: 0 solid transparent;
+    margin: 5px 10px;
+
+    &:hover {
+        border: none;
+    }
+}
+
+header div img {
+    height: 30px;
+    width: auto;
+}
+
+.logo-bar {
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+}
+
+nav {
+    justify-content: center;
+}
+
+nav a{
+    font-size: 1.5em;
+    margin: 10px 40px;
+    transition: transform .2s ease-in-out;
+    &:hover {
+        border: none;
+        transform: scale(1.1);
+    }
+}
+
+
+.handlekurv-item {
+    display: grid;
+    grid-template-columns: 200px auto 70px 70px 70px 40px;
+    border-bottom: 1px solid black;
+}
+
+.handlekurv-item img {
+    max-width: 200px;
+    max-height: 80px;
+}
+
+.center {
+    text-align: center;
+}
+
+.handlekurv-item button {
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    box-shadow: none;
+    align-items: center;
+}

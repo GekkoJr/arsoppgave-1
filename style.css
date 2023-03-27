@@ -1,214 +1,222 @@
 /* Stylesheet for Digi store AS */
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  font-family: "Roboto", verdana, arial, helvetica, sans-serif;
+  font-size: 18px;
+}
 
 /* Nettbutikk style */
 main, .standard-width {
-    max-width : 1000px;
-    margin: auto;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .img-container img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    border-radius : 10px;
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .product-gallery {
-    display : flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
+}
+.product-gallery a div {
+  max-width: 300px;
 }
 
 .mini-txt {
-    margin: 0 auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 /*Login form style */
-
 #login-form {
-    width: 500px;
-    background-color: lightgray;
-    margin: auto;
-    border-radius: 10px;
-    margin-top: 50px;
-
+  width: 500px;
+  background-color: lightgray;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 50px;
 }
 
 #login-form form {
-    width: 85%;
-    padding: 10px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 85%;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-
 #login-form form label {
-    display: block;
+  display: block;
 }
 
 #login-form form input:not(#sub-btn) {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    border: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
 }
 
 #sub-btn {
-    height: 30px;
-    border-radius: 10px;
-    border: none;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
 }
 
 #login-form form div, #sub-btn {
-    width: 75%;
+  width: 75%;
 }
 
 #login-form form div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* produkt bilde carusel */
 .img-slide-container {
-    flex: 2;
+  flex: 2;
 }
 
 .slide-img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    margin-top: 30px;
-    display: inline;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  margin-top: 30px;
+  display: inline;
 }
 
 .slide {
-    display: none;
-    border-radius: 10px;
-    align-content: center;
-
+  display: none;
+  border-radius: 10px;
+  align-content: center;
 }
 
 .tilbake, .frem {
   cursor: pointer;
-/* position absolute*/
-    top: 200px;
-    width: auto;
-    padding: 4px;
-    color: lightslategray;
-    font-weight: bold;
-    font-size: 28px;
-    transition: 0.6s ease;
-    border-radius: 5px;
-
+  /* position absolute*/
+  top: 200px;
+  width: auto;
+  padding: 4px;
+  color: lightslategray;
+  font-weight: bold;
+  font-size: 28px;
+  transition: 0.6s ease;
+  border-radius: 5px;
 }
 
 .frem {
-    left: 0
+  left: 0;
 }
 
 .slide-overgang {
-    animation-name: overgang;
-    animation-duration: 1.4s;
+  animation-name: overgang;
+  animation-duration: 1.4s;
 }
 
 @keyframes overgang {
-    form {opacity: .4} to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 .kjop-container {
-    background-color: lightslategray;
-    height: 350px;
-    border-radius: 10px;
-    flex: 1;
+  background-color: lightslategray;
+  height: 350px;
+  border-radius: 10px;
+  flex: 1;
 }
 
 .kjop-container form {
-    width: 95%;
-    margin: auto;
+  width: 95%;
+  margin: auto;
 }
 
 .produkt {
-    display: flex;
+  display: flex;
 }
 
-.kjop-container form button, input[name="antall"] {
-    width: 100%;
-
+.kjop-container form button, input[name=antall] {
+  width: 100%;
 }
 
-
-header div h1 {
-    margin: 0 auto;
-}
-
-header nav {
-    background-color: lightgray;
-    padding: 5px;
-    display: flex;
-    position: sticky;
+header div div, nav {
+  display: flex;
+  align-items: center;
 }
 
 header div div a img {
-    height: 30px;
-    width: auto;
-    background-color: lightgray;
-    padding: 7px;
-    border-radius: 100%;
-    object-fit: contain;
+  height: 30px;
+  width: auto;
 }
 
 header div div a {
-    text-decoration: none;
-    border: 0px solid transparent;
+  text-decoration: none;
+  border: 0 solid transparent;
+  margin: 5px 10px;
+}
+header div div a:hover {
+  border: none;
 }
 
 header div img {
-    height: 30px;
-    width: auto;
+  height: 30px;
+  width: auto;
 }
 
 .logo-bar {
-    display: flex;
-    justify-content: space-between;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
 }
 
-header div div a:hover {
-    border: none;
+nav {
+  justify-content: center;
 }
 
+nav a {
+  font-size: 1.5em;
+  margin: 10px 40px;
+  transition: transform 0.2s ease-in-out;
+}
 nav a:hover {
-    border: none;
+  border: none;
+  transform: scale(1.1);
 }
 
 .handlekurv-item {
-    display: grid;
-    grid-template-columns: 200px auto 70px 70px 70px 40px;
-    border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 200px auto 70px 70px 70px 40px;
+  border-bottom: 1px solid black;
 }
 
 .handlekurv-item img {
-    max-width: 200px;
-    max-height: 80px;
+  max-width: 200px;
+  max-height: 80px;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .handlekurv-item button {
-    border-radius: 100%;
-    height: 30px;
-    width: 30px;
-    box-shadow: none;
-    align-items: center;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  box-shadow: none;
+  align-items: center;
 }
+
+/*# sourceMappingURL=style.css.map */
