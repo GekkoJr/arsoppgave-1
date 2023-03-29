@@ -1,6 +1,9 @@
 /* Stylesheet for Digi store AS */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+// variabler
+$netbutikkImgSize: 200px;
+
 
 .light {
     $background: white;
@@ -13,17 +16,25 @@ body {
     font-size: 18px;
 }
 
+////////////////////////////////
 /* Nettbutikk style */
+////////////////////////////////
+
 main, .standard-width {
     max-width : 1000px;
     margin: auto;
 }
 
 .img-container img {
-    width: 200px;
-    height: 150px;
+    width: 100%;
+    height: #{$netbutikkImgSize};
     object-fit: contain;
     border-radius : 10px;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .product-gallery {
@@ -31,7 +42,17 @@ main, .standard-width {
     gap: 15px;
 
     a div {
-        max-width: 300px;
+        max-width: #{$netbutikkImgSize};
+    }
+
+    a {
+        border:none;
+
+        &:hover {
+            border: none;
+            text-decoration: underline 2px black;
+
+        }
     }
 }
 
@@ -39,18 +60,34 @@ main, .standard-width {
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+
+    > * {
+        flex: 100%;
+        text-align: center;
+        margin: 3px 0;
+    }
+
+    :nth-child(2) {
+        font-size: 0.8em;
+    }
+
 }
 
 a {
     text-decoration: none;
     color: black;
+
+    &:hover{
+        border: 1px solid black;
+    }
 }
 
-a:hover {
-    border: 1px solid black;
-}
 
+
+////////////////////////////////////////////////
 /*Login form style */
+////////////////////////////////////////////////
 
 #login-form {
     width: 500px;
@@ -96,7 +133,10 @@ a:hover {
     margin-bottom: 10px;
 }
 
+////////////////////////////////////////////////////////////////
 /* produkt bilde carusel */
+////////////////////////////////////////////////////////////////
+
 .img-slide-container {
     flex: 2;
 }
@@ -162,8 +202,12 @@ a:hover {
 
 .kjop-container form button, input[name="antall"] {
     width: 100%;
-
 }
+
+////////////////////////////////////////////////////////////////
+/*Style for header*/
+////////////////////////////////////////////////////////////////
+
 header div div, nav {
     display: flex;
     align-items: center;

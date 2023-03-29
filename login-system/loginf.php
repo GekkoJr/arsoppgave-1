@@ -2,9 +2,9 @@
 session_start();
 error_reporting(0);
 if($_SESSION['id']) {
-    if($_SESSION['admin'] = True) {
+    if($_SESSION['admin'] === true) {
     header('Location: ../admin/dashboard.php');
-    } elseif ($_SESSION['order'] = True) {
+    } elseif ($_SESSION['ordePerson'] = true) {
         header('Location: ../order/dashboard.php');
     } else {
         header('Location: ../kundesider/dashboard.php');

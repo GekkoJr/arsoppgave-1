@@ -13,7 +13,7 @@ $produkt = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 // henter all info til produkt artiklen
 $proNavn = $produkt['proNavn'];
-$images = explode(" ", $produkt['image']);
+$images = explode(" $,$ ", $produkt['image']);
 $dirNavn = $produkt['dirNavn']; // directory navnet bildene er i
 $miniBeskriv = $produkt['miniBeskriv'];
 $pris = $produkt['pris']
@@ -87,7 +87,6 @@ if($_POST['antall']) {
                 <button type="submit">Legg til i handlevogn</button>
             </form>
         </div>
-        <hr>
     </div>
 </main>
 </body>

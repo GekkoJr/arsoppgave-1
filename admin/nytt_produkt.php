@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 // sjekker om du er logget inn som admin
-if ($_SESSION['admin']) {
+if ($_SESSION['admin'] === true) {
     include('../tilkoble.php');
     $connect->select_db("users");
 
@@ -76,7 +76,7 @@ if ($_SESSION['admin']) {
 
 
     }
-    $arrayIMG = implode(" ", $images);
+    $arrayIMG = implode(" $,$ ", $images);
     $query = "INSERT INTO produkter (image , proNavn, miniBeskriv, beskrivelse, pris, dirNavn) VALUES ('$arrayIMG' , '$pNavn', '$miBe', '$beskriv', '$pris', '$pNavn')";
     if ($masterOK) {
         mysqli_query($connect, $query);

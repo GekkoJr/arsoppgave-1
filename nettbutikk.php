@@ -28,7 +28,7 @@ $count = mysqli_num_rows($result);
             $pris = $rows[$count]['pris'];;
             $miniBe = $rows[$count]['miniBeskriv'];
             $id = $rows[$count]['proID'];
-            $imgArr = explode(' ', $imgArr);
+            $imgArr = explode(' $,$ ', $imgArr);
             $imgSrc = "product_img/" . $dirNavn . "/" . $imgArr[0];
             ?>
             <a href=produkt.php?id=<?php echo $id ?>>
@@ -38,7 +38,7 @@ $count = mysqli_num_rows($result);
                     </div>
                     <div class="mini-txt">
                         <h4><?php echo $proNavn ?></h4>
-                        <p class="mini-beskriv"><?php echo $miniBe ?></p>
+<!--                        <p class="mini-beskriv">--><?php //echo $miniBe ?><!--</p>-->
                         <p><?php echo $pris . ' kr' ?></p>
                     </div>
                 </div>

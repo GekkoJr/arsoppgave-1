@@ -11,7 +11,7 @@ $password = stripslashes($password);
 $username = mysqli_real_escape_string($connect, $username);
 $password = mysqli_real_escape_string($connect, $password);
 
-$query = "SELECT passord, ID, admin FROM brukere WHERE mail = '$username'"; //henter passordet knyttet til eposten, returnerer bare en rad pga sjekken om emailen er i databasen
+$query = "SELECT passord, ID, admin, ordePerson FROM brukere WHERE mail = '$username'"; //henter passordet knyttet til eposten, returnerer bare en rad pga sjekken om emailen er i databasen
 $login = mysqli_query($connect, $query); // spør databasen om brukere som matcher
 $row = mysqli_fetch_array($login, MYSQLI_ASSOC); // flytter data inn i en array
 
@@ -19,11 +19,18 @@ if(password_verify($password, $row['passord'])) {
     echo "login succes";
     $_SESSION['id'] = $row['ID'];
     if ($row['admin'] == 1) {
-        $_SESSION['admin'] = True;
+        $_SESSION['admin'] = true;
         header("Location: ../admin/dashboard.php");
+    } else if ($row['ordePerson'] == 1){
+        $_SESSION['ordePerson'] = true;
+        header('Location: ../order/dashboard.php');
     } else {
-        $_SESSION['admin'] = False;
+        $_SESSION['admin'] = false;
+        $_SESSION['ordePerson'] = false;
+        header('Location: ../kundesider/dashboard.php');
     }
+
+
 } else {
     echo "Feil bruker navn eller passord";
 }
