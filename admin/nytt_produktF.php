@@ -1,5 +1,9 @@
-
-<!doctype html>
+<?php
+session_start();
+error_reporting(0);
+if ($_SESSION['admin']) {
+    ?>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,4 +24,10 @@
 
 </body>
 </html>
+<?php
+} else {
+    include("../komponenter/unathorized.html");
+}
+?>
+<
 

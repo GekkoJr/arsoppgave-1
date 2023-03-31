@@ -5,7 +5,7 @@ if($_SESSION['id']) {
     if($_SESSION['admin'] === true) {
     header('Location: ../admin/dashboard.php');
     } elseif ($_SESSION['ordePerson'] = true) {
-        header('Location: ../order/dashboard.php');
+        header('Location: ../admin/dashboard.php');
     } else {
         header('Location: ../kundesider/dashboard.php');
     }

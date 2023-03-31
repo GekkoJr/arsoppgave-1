@@ -23,7 +23,7 @@ if(password_verify($password, $row['passord'])) {
         header("Location: ../admin/dashboard.php");
     } else if ($row['ordePerson'] == 1){
         $_SESSION['ordePerson'] = true;
-        header('Location: ../order/dashboard.php');
+        header('Location: ../admin/dashboard.php');
     } else {
         $_SESSION['admin'] = false;
         $_SESSION['ordePerson'] = false;

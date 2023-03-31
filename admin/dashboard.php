@@ -28,27 +28,7 @@ if ($_SESSION['admin'] === true) {
 </html>
 <?php
 } else {
-    ?>
-    <html>
-    <img src="https://http.cat/401">
-    <a href="../login-system/login.html">Logg inn som administrator</a>
-    <style>
-        html {
-            background-color: black;
-        }
-        img {
-            margin: auto;
-        }
-        a {
-            color: aliceblue;
-            text-decoration: none;
-            background-color: dimgrey;
-            padding: 5px;
-            border-radius: 5px;
-        }
-    </style>
-    </html>
-<?php
+    include("../komponenter/unathorized.html");
 }
 
 

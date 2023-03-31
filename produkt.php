@@ -2,6 +2,8 @@
 session_start();
 include("tilkoble.php");
 $connect->select_db("users");
+// defult value for hvor mange du skal ha
+$defultValue = 1;
 
 //tar produkt id fra url
 $produktID = $_GET["id"];
@@ -29,19 +31,19 @@ $pris = $produkt['pris']
 <?php include("komponenter/header.html");
 // sjekker om den ble kjøpt og legger til i handlekurv
 error_reporting(0); // fordi linjen under kan gi feilmeldinger skrur vi de av
-if($_POST['antall']) {
-    if($_SESSION['handlekurv']) {
+if ($_POST['antall']) {
+    if ($_SESSION['handlekurv']) {
         $sjekk = true;
         $index = 0;
         // sjekker om den allerede ligger i handlekurven, hvis så legger til flere
         foreach ($_SESSION['handlekurv'] as $element) {
-            if($element = $produktID) {
+            if ($element = $produktID) {
                 $sjekk = false;
                 $_SESSION['mengde'][$index] += $_POST['antall'];
                 $index++;
             }
         }
-        if($sjekk) {
+        if ($sjekk) {
             array_push($_SESSION['handlekurv'], $produktID);
             array_push($_SESSION['mengde'], $_POST['antall']);
         }
@@ -68,26 +70,49 @@ if($_POST['antall']) {
                 $src = "product_img/" . $dirNavn . "/" . $src;
                 ?>
                 <div class="slide slide-overgang">
-                    <img class="slide-img" src="<?php echo $src; ?>" alt="bilde av produktet">
+                    <img class="slide-img" src="<?php echo $src; ?>" alt="<?php echo $proNavn ?>>">
 
                 </div>
-            <?php
+                <?php
             }
             ?>
-              <a class="tilbake" onclick="bytt(-1)">&#10094;</a>
-              <a class="frem" onclick="bytt(1)">&#10095;</a>
+            <a class="tilbake stopp-selection" onclick="bytt(-1)">&#10094;</a>
+            <a class="frem stopp-selection" onclick="bytt(1)">&#10095;</a>
             <script src="js/slide.js"></script>
         </div>
         <div class="kjop-container">
             <h2><?php echo $pris . " kr" ?></h2>
+            <p>ANTALL STJERNER KOMMER HER</p>
             <form action="produkt.php?id=<?php echo $produktID ?>" method="post">
                 <input style="display:none" value="<?php echo $produktID; ?>" name="leggTil">
                 <p>Antall</p>
-                <input type="number" name="antall" value="1">
+                <?php
+                include("komponenter/select_number.php");
+                if ($produkt['Antall'] > 50) {
+                    ?> <p class="tiny">Det er 50+ produkter på nettlager</p> <?php
+                } else if ($produkt['Antall'] > 0) {
+                    ?> <p class="tiny">Det er <?php echo $produkt['Antall'] ?> produkter på nettlager</p>
+                    <?php
+                } else {
+                    echo "<p>Produktet er ikke tilgjengelig på vårt lager</p>";
+                }
+                ?>
                 <button type="submit">Legg til i handlevogn</button>
             </form>
         </div>
+
     </div>
+    <div class="split-div">
+        <div>
+            <h3>Produkt detaljer</h3>
+            <p><?php echo $produkt['beskrivelse'] ?></p>
+        </div>
+        <div>
+            <h3>Annmeldelser</h3>
+            <p>Det er ingen annmeldeser tilgjegelig</p>
+        </div>
+    </div>
+    <script src="js/velgAntall.js"></script>
 </main>
 </body>
 

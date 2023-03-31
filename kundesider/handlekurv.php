@@ -41,7 +41,12 @@ $connect->select_db("users");
                     <h3><?php echo $result['proNavn'] ?></h3>
                     <p><?php echo $result['miniBeskriv'] ?></p>
                 </div>
-                <p class="handlekurv-tall center"><?php echo $_SESSION['mengde'][$index] ?></p>
+                <div>
+                <?php
+                $defultValue = $_SESSION['mengde'][$index];
+                include("../komponenter/select_number.php")
+                ?>
+                </div>
                 <p class="handlekurv-tall"><?php echo $result['pris'] ?></p>
                 <p class="handlekurv-tall"><?php echo $_SESSION['mengde'][$index] * $result['pris'] ?></p>
                 <button type="submit">&#9747;</button>
@@ -56,9 +61,10 @@ $connect->select_db("users");
     ?>
     <div>
         <form action="checkoutRedirect.php">
-            <button>Gå til checkout</button>
+            <button type="submit">Gå til checkout</button>
         </form>
     </div>
+    <script src="/js/velgAntall.js"></script>
 </main>
 </body>
 </html>

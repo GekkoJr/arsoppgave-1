@@ -5,15 +5,16 @@
 $netbutikkImgSize: 200px;
 
 
-.light {
-    $background: white;
-    $text: black;
-    $contrast: lightblue;
-}
+$backgroundColor: white;
+$text: black;
+$contrast: #eceff1;
+$contrast2: #4bb2bf;
+$accent: mediumpurple;
+
 
 body {
-    font-family: "Roboto", verdana, arial, helvetica, sans-serif;
-    font-size: 18px;
+  font-family: "Roboto", verdana, arial, helvetica, sans-serif;
+  font-size: 18px;
 }
 
 ////////////////////////////////
@@ -21,68 +22,67 @@ body {
 ////////////////////////////////
 
 main, .standard-width {
-    max-width : 1000px;
-    margin: auto;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .img-container img {
-    width: 100%;
-    height: #{$netbutikkImgSize};
-    object-fit: contain;
-    border-radius : 10px;
-    transition: transform .2s ease-in-out;
+  width: 100%;
+  height: #{$netbutikkImgSize};
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform .2s ease-in-out;
 
-    &:hover {
-        transform: scale(1.05);
-    }
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .product-gallery {
-    display : flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 
-    a div {
-        max-width: #{$netbutikkImgSize};
+  a div {
+    max-width: #{$netbutikkImgSize};
+  }
+
+  a {
+    border: none;
+
+    &:hover {
+      border: none;
+      text-decoration: underline 2px black;
+
     }
-
-    a {
-        border:none;
-
-        &:hover {
-            border: none;
-            text-decoration: underline 2px black;
-
-        }
-    }
+  }
 }
 
 .mini-txt {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-    > * {
-        flex: 100%;
-        text-align: center;
-        margin: 3px 0;
-    }
+  > * {
+    flex: 100%;
+    text-align: center;
+    margin: 3px 0;
+  }
 
-    :nth-child(2) {
-        font-size: 0.8em;
-    }
+  :nth-child(2) {
+    font-size: 0.8em;
+  }
 
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 
-    &:hover{
-        border: 1px solid black;
-    }
+  &:hover {
+    border: 1px solid black;
+  }
 }
-
 
 
 ////////////////////////////////////////////////
@@ -90,188 +90,320 @@ a {
 ////////////////////////////////////////////////
 
 #login-form {
-    width: 500px;
-    background-color: lightgray;
-    margin: auto;
-    border-radius: 10px;
-    margin-top: 50px;
+  width: 500px;
+  background-color: lightgray;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 50px;
 
 }
 
 #login-form form {
-    width: 85%;
-    padding: 10px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 85%;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 
 #login-form form label {
-    display: block;
+  display: block;
 }
 
 #login-form form input:not(#sub-btn) {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    border: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
 }
 
 #sub-btn {
-    height: 30px;
-    border-radius: 10px;
-    border: none;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
 }
 
 #login-form form div, #sub-btn {
-    width: 75%;
+  width: 75%;
 }
 
 #login-form form div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ////////////////////////////////////////////////////////////////
-/* produkt bilde carusel */
+/* produkt sider */
 ////////////////////////////////////////////////////////////////
 
 .img-slide-container {
-    flex: 2;
+  flex: 2;
 }
 
 .slide-img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    margin-top: 30px;
-    display: inline;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  margin-top: 30px;
+  display: inline;
 }
 
 .slide {
-    display: none;
-    border-radius: 10px;
-    align-content: center;
+  display: none;
+  border-radius: 10px;
+  align-content: center;
 
 }
 
 
 .tilbake, .frem {
   cursor: pointer;
-/* position absolute*/
-    top: 200px;
-    width: auto;
-    padding: 4px;
-    color: lightslategray;
-    font-weight: bold;
-    font-size: 28px;
-    transition: 0.6s ease;
-    border-radius: 5px;
+  /* position absolute*/
+  top: 200px;
+  width: auto;
+  padding: 4px;
+  color: #{$text};
+  font-weight: bold;
+  font-size: 28px;
+  transition: 0.6s ease;
+  border-radius: 5px;
 
 }
 
 .frem {
-    left: 0
+  left: 0
 }
 
 .slide-overgang {
-    animation-name: overgang;
-    animation-duration: 1.4s;
+  animation-name: overgang;
+  animation-duration: 1.4s;
 }
 
 @keyframes overgang {
-    from {opacity: .4} to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 .kjop-container {
-    background-color: lightslategray;
-    height: 350px;
-    border-radius: 10px;
-    flex: 1;
-}
+  background-color: #{$contrast};
+  height: 350px;
+  border-radius: 10px;
+  flex: 1;
 
-.kjop-container form {
+  h2 {
+    margin: 10px auto;
+    width: 95%;
+  }
+
+  form {
     width: 95%;
     margin: auto;
+    height: 200px;
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: #{$backgroundColor};
+      border-radius: 10px;
+      border: 1px solid #{$text};
+      height: 30px;
+      font-size: 1.1em;
+
+      &:hover {
+      background-color: mediumpurple;
+        cursor: pointer;
+      }
+    }
+
+
+
+    p:not(.tiny) {
+      margin: auto auto auto 5px;
+      font-size: 1.1em;
+    }
+
+    div p & input {
+      font-size: 1em;
+    }
+
+    .tiny {
+      font-size: 0.9em;
+    }
+  }
 }
+
 
 .produkt {
-    display: flex;
+  display: flex;
 }
 
-.kjop-container form button, input[name="antall"] {
-    width: 100%;
+.split-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    flex: 45%;
+
+    h3 {
+      background-color: #{$contrast};
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+  }
 }
+
 
 ////////////////////////////////////////////////////////////////
 /*Style for header*/
 ////////////////////////////////////////////////////////////////
 
 header div div, nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 header div div a img {
-    height: 30px;
-    width: auto;
+  height: 30px;
+  width: auto;
 }
 
 header div div a {
-    text-decoration: none;
-    border: 0 solid transparent;
-    margin: 5px 10px;
+  text-decoration: none;
+  border: 0 solid transparent;
+  margin: 5px 10px;
 
-    &:hover {
-        border: none;
-    }
+  &:hover {
+    border: none;
+  }
 }
 
 header div img {
-    height: 30px;
-    width: auto;
+  height: 30px;
+  width: auto;
 }
 
 .logo-bar {
-    display: grid;
-    grid-template-columns: 100px auto 100px;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
 }
 
 nav {
-    justify-content: center;
+  justify-content: center;
 }
 
-nav a{
-    font-size: 1.5em;
-    margin: 10px 40px;
-    transition: transform .2s ease-in-out;
-    &:hover {
-        border: none;
-        transform: scale(1.1);
-    }
+nav a {
+  font-size: 1.5em;
+  margin: 10px 40px;
+  transition: transform .2s ease-in-out;
+
+  &:hover {
+    border: none;
+    transform: scale(1.1);
+  }
 }
 
+////////////////////////////////////////////////////////////////
+/* Handlekurv style */
+////////////////////////////////////////////////////////////////
 
 .handlekurv-item {
-    display: grid;
-    grid-template-columns: 200px auto 70px 70px 70px 40px;
-    border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 200px auto 90px 70px 70px 40px;
+  border-bottom: 1px solid black;
+  align-items: center;
+
+  div h3, div p:not(.minus, .pluss) {
+    margin: 8px 0px;
+  }
+
+  :nth-child(3) {
+    width: 80px;
+  }
 }
 
 .handlekurv-item img {
-    max-width: 200px;
-    max-height: 80px;
+  max-width: 200px;
+  max-height: 80px;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .handlekurv-item button {
-    border-radius: 100%;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  box-shadow: none;
+  align-items: center;
+}
+
+////////////////////////////////////////////////////////////////
+/*Random shit */
+////////////////////////////////////////////////////////////////
+
+.AntallVelger {
+  border: 1px solid black;
+  border-radius: 10px;
+  max-width: 100px;
+  display: flex;
+  max-height: 30px;
+  background-color: #{$backgroundColor};
+
+  input, p {
+    flex: 1;
     height: 30px;
-    width: 30px;
-    box-shadow: none;
+    text-align: center;
+    margin: auto;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
     align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    border: none;
+    overflow: hidden;
+  }
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.stopp-selection {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.error {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+
+  img {
+    width: 500px;
+    width: auto;
+  }
+
+  p {
+    text-align: center;
+    width: 500px;
+  }
 }

@@ -21,9 +21,9 @@ Hele innlogging systemet og basic produkt oppretning
 - Handlekurv kan fjerne ting
 
 ### Uke  3 plan 
-- [ ] Nytt design
-- [ ] Farger og designmanual
-- [ ] bytte til scss
+- [x] Nytt design
+- [ ] gjøre ferdig produkt sidene
+- [x] bytte til scss
 
 ### Hva skal skje videre
 - Brukertesting
