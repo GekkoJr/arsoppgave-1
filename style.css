@@ -194,18 +194,23 @@ div p .kjop-container form input {
   display: flex;
 }
 
-.split-div {
+.tabcontainer > :nth-child(1) {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.split-div div {
-  flex: 45%;
-}
-.split-div div h3 {
   background-color: #eceff1;
+  display: flex;
   padding: 5px 10px;
   border-radius: 10px;
+}
+.tabcontainer > :nth-child(1) h3 {
+  margin: 0 5px;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
+.underline {
+  text-decoration: 2px underline black;
 }
 
 /*Style for header*/

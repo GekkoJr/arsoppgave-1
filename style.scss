@@ -190,7 +190,7 @@ a {
 }
 
 .kjop-container {
-  background-color: #{$contrast};
+  background-color: $contrast;
   height: 350px;
   border-radius: 10px;
   flex: 1;
@@ -207,9 +207,9 @@ a {
 
     button[type="submit"] {
       width: 100%;
-      background-color: #{$backgroundColor};
+      background-color: $backgroundColor;
       border-radius: 10px;
-      border: 1px solid #{$text};
+      border: 1px solid $text;
       height: 30px;
       font-size: 1.1em;
 
@@ -241,22 +241,30 @@ a {
   display: flex;
 }
 
-.split-div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.tabcontainer {
+   > :nth-child(1) {
+    width: 100%;
+    background-color: $contrast;
+     display: flex;
+     padding: 5px 10px;
+     border-radius: 10px;
 
-  div {
-    flex: 45%;
+     h3 {
+       margin: 0 5px;
+     }
+}
+}
 
-    h3 {
-      background-color: #{$contrast};
-      padding: 5px 10px;
-      border-radius: 10px;
-    }
+.tab {
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
+.underline {
+  text-decoration: 2px underline black;
+}
 
 ////////////////////////////////////////////////////////////////
 /*Style for header*/

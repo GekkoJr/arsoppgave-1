@@ -45,7 +45,6 @@ if ($_SESSION['admin'] === true) {
                 $ok = FALSE;
             }
         }
-        echo "-- hve med ?--";
         //sjekker om det allerde finnes et bilde med samme navn
         if (file_exists($upload_file)) {
             echo "filen eksister allerede";
@@ -67,7 +66,6 @@ if ($_SESSION['admin'] === true) {
                 echo 'upload succes';
                 echo $upload_file;
                 array_push($images, $filename);
-                print_r($images);
             } else {
                 echo 'upload failed';
             }

@@ -21,6 +21,7 @@ $miniBeskriv = $produkt['miniBeskriv'];
 $pris = $produkt['pris']
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link href="style.css" rel="stylesheet">
@@ -102,17 +103,20 @@ if ($_POST['antall']) {
         </div>
 
     </div>
-    <div class="split-div">
+
+    <div class="tabcontainer">
         <div>
-            <h3>Produkt detaljer</h3>
+            <h3 class="tab">Produkt detaljer</h3>
+            <h3 class="tab">Annmeldelser</h3>
+        </div>
+        <div class="tab-con">
             <p><?php echo $produkt['beskrivelse'] ?></p>
         </div>
-        <div>
-            <h3>Annmeldelser</h3>
+        <div class="tab-con">
             <p>Det er ingen annmeldeser tilgjegelig</p>
         </div>
-    </div>
-    <script src="js/velgAntall.js"></script>
+        <script src="js/tabs.js"></script>
+        <script src="js/velgAntall.js"></script>
 </main>
 </body>
 
