@@ -10,8 +10,8 @@ if($_POST['id']) {
     $item = $_POST['id'];
     foreach ($_SESSION['handlekurv'] as $element) {
         if($element = $item); {
-        unset($_SESSION['handlekurv'][$index]);
-        unset($_SESSION['mengde'][$index]);
+        array_splice($_SESSION['handlekurv'],$index ,1);
+        array_splice($_SESSION['mengde'], $index,1);
         echo "yay";
         header("Location: /kundesider/handlekurv.php");
 }

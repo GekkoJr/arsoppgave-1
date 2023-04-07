@@ -38,7 +38,7 @@ if ($_POST['antall']) {
         $index = 0;
         // sjekker om den allerede ligger i handlekurven, hvis så legger til flere
         foreach ($_SESSION['handlekurv'] as $element) {
-            if ($element = $produktID) {
+            if ($element === $produktID) {
                 $sjekk = false;
                 $_SESSION['mengde'][$index] += $_POST['antall'];
                 $index++;
@@ -95,7 +95,7 @@ if ($_POST['antall']) {
                     ?> <p class="tiny">Det er <?php echo $produkt['Antall'] ?> produkter på nettlager</p>
                     <?php
                 } else {
-                    echo "<p>Produktet er ikke tilgjengelig på vårt lager</p>";
+                    echo "<p class='tiny'>Produktet er ikke tilgjengelig på vårt lager</p>";
                 }
                 ?>
                 <button type="submit">Legg til i handlevogn</button>

@@ -288,6 +288,50 @@ nav a:hover {
   align-items: center;
 }
 
+#checkoutBtn {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#checkoutBtn button {
+  padding: 5px 15px;
+  font-size: 1em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+#checkoutBtn button:hover {
+  background-color: #4bb2bf;
+}
+
+/* checkout + checkout redirect */
+.checkoutRedirectChoice {
+  background-color: #eceff1;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  margin: 5vh auto auto;
+}
+.checkoutRedirectChoice h3 {
+  font-size: 1.1em;
+}
+.checkoutRedirectChoice button {
+  width: 100%;
+  padding: 5px 15px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 1em;
+}
+.checkoutRedirectChoice button:hover {
+  cursor: pointer;
+  background-color: #4bb2bf;
+}
+
 /*Random shit */
 .AntallVelger {
   border: 1px solid black;

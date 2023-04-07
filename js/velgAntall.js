@@ -17,4 +17,5 @@ number.forEach( element => {
             element.value = 1;
         }
     })
+    index++;
 })

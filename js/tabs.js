@@ -3,6 +3,7 @@ let div = document.querySelectorAll(".tab-con")
 let index2 = 0;
 
 fjern()
+
 tabs.forEach(element => {
     let tall = index2;
     element.addEventListener("click", () => {
@@ -22,3 +23,5 @@ function fjern() {
         })
     })
 }
+
+tabs[0].classList.add("underline");

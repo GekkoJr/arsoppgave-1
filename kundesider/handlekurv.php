@@ -1,7 +1,5 @@
 <?php
 session_start();
-error_reporting(0);
-
 include("../tilkoble.php");
 $connect->select_db("users");
 ?>
@@ -33,38 +31,46 @@ $connect->select_db("users");
             $image = "../product_img/" . $result['dirNavn'] . "/" . $images[0];
 
             ?>
-                <form action="fjern_item.php" method="post">
-                    <input value="<?php echo $result['proID'] ?>" style="display: none" name="id">
-            <div class="handlekurv-item" id="<?php echo $result['proID'] ?>">
-                <img src="<?php echo $image ?>" alt="<?php echo $result['miniBeskriv'] ?>">
-                <div>
-                    <h3><?php echo $result['proNavn'] ?></h3>
-                    <p><?php echo $result['miniBeskriv'] ?></p>
+            <form action="fjern_item.php" method="post">
+                <input value="<?php echo $result['proID'] ?>" style="display: none" name="id">
+                <div class="handlekurv-item" id="<?php echo $result['proID'] ?>">
+                    <img src="<?php echo $image ?>" alt="<?php echo $result['miniBeskriv'] ?>">
+                    <div>
+                        <h3><?php echo $result['proNavn'] ?></h3>
+                        <p><?php echo $result['miniBeskriv'] ?></p>
+                    </div>
+                    <div>
+                        <?php
+                        $defultValue = $_SESSION['mengde'][$index];
+                        include("../komponenter/select_number.php")
+                        ?>
+                    </div>
+                    <p class="handlekurv-tall pris"><?php echo $result['pris'] ?></p>
+                    <p class="handlekurv-tall totPris"><?php echo $_SESSION['mengde'][$index] * $result['pris'] ?></p>
+                    <button type="submit">&#9747;</button>
                 </div>
-                <div>
-                <?php
-                $defultValue = $_SESSION['mengde'][$index];
-                include("../komponenter/select_number.php")
-                ?>
-                </div>
-                <p class="handlekurv-tall"><?php echo $result['pris'] ?></p>
-                <p class="handlekurv-tall"><?php echo $_SESSION['mengde'][$index] * $result['pris'] ?></p>
-                <button type="submit">&#9747;</button>
-            </div>
+            </form>
+        <?php
+        $index++;
+        ?>
+            <div>
+                <form id="checkoutBtn" action="checkoutRedirect.php">
+                    <button type="submit">Gå til checkout</button>
                 </form>
+            </div>
+            <script src="/js/velgAntall.js"></script>
+            <script src="/js/update_mangde.js"></script>
             <?php
-            $index++;
         }
+    } else {
+        ?>
+    <h1 class="center">Du har ingen produkter i handlevognen</h1>
+    <?php
     }
 
 
     ?>
-    <div>
-        <form action="checkoutRedirect.php">
-            <button type="submit">Gå til checkout</button>
-        </form>
-    </div>
-    <script src="/js/velgAntall.js"></script>
+
 </main>
 </body>
 </html>

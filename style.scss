@@ -9,7 +9,7 @@ $backgroundColor: white;
 $text: black;
 $contrast: #eceff1;
 $contrast2: #4bb2bf;
-$accent: mediumpurple;
+$accent: #4bb2bf;
 
 
 body {
@@ -350,6 +350,59 @@ nav a {
   box-shadow: none;
   align-items: center;
 }
+
+#checkoutBtn {
+  margin: auto;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+
+  button {
+    padding: 5px 15px;
+    font-size: 1em;
+    background-color: $backgroundColor;
+    border: 1px solid $text;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////
+/* checkout + checkout redirect */
+////////////////////////////////////////////////////////////////
+
+.checkoutRedirectChoice {
+  background-color: $contrast;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  margin: 5vh auto auto;
+
+  h3{
+    font-size: 1.1em;
+  }
+
+  button {
+    width: 100%;
+    padding: 5px 15px;
+    background-color: $backgroundColor;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 1em;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $accent;
+    }
+  }
+}
+
 
 ////////////////////////////////////////////////////////////////
 /*Random shit */
