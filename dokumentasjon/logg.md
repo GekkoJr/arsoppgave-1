@@ -22,7 +22,7 @@ Hele innlogging systemet og basic produkt oppretning
 
 ### Uke  3 plan 
 - [x] Nytt design
-- [ ] gjøre ferdig produkt sidene
+- [x] gjøre ferdig produkt sidene
 - [x] bytte til scss
 
 ### Hva skal skje videre
@@ -36,3 +36,4 @@ Hele innlogging systemet og basic produkt oppretning
 
 ### ider?
 - Bytte til en api og js for database??? (burde ha vært gjort men for sent å snu)
+- Ble utfært halveis etter som noen funksjoner bruker js frontend med fetch() for å oppddatere database

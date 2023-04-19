@@ -5,9 +5,7 @@ $connect->select_db("users");
 ?>
 
 <html lang="en">
-<head>
-    <link href="/style.css" rel="stylesheet">
-</head>
+<?php include("../komponenter/meta.php") ?>
 <body>
 <?php include("../komponenter/header.html"); ?>
 <main>
@@ -51,6 +49,7 @@ $connect->select_db("users");
                 </div>
             </form>
         <?php
+        }
         $index++;
         ?>
             <div>
@@ -61,7 +60,7 @@ $connect->select_db("users");
             <script src="/js/velgAntall.js"></script>
             <script src="/js/update_mangde.js"></script>
             <?php
-        }
+
     } else {
         ?>
     <h1 class="center">Du har ingen produkter i handlevognen</h1>

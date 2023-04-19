@@ -25,6 +25,7 @@ function update() {
         value.push(element.value)
     })
     data.string = value.join()
+    console.log(data.string);
 
     fetch("../js/update_mengde.php", {
         method: "POST", body: JSON.stringify(data), headers: {
@@ -35,5 +36,6 @@ function update() {
     let index = 0;
     field.forEach(element => {
         totalPris[index].textContent = element.value * parseInt(priser[index].textContent)
+        index++;
     })
 }

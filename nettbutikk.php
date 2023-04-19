@@ -11,10 +11,11 @@ $count = mysqli_num_rows($result);
 
 //print_r($rows[1]['proID']); henter rad 1(2) sin proID
 ?>
+<!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
+<?php
+$title = "Digistore nettbutikk";
+include("komponenter/meta.php") ?>
 <body>
 <?php include("komponenter/header.html") ?>
 <main>

@@ -61,7 +61,7 @@ a:hover {
 }
 
 /*Login form style */
-#login-form {
+#login-form, .form {
   width: 500px;
   background-color: lightgray;
   margin: auto;
@@ -69,7 +69,7 @@ a:hover {
   margin-top: 50px;
 }
 
-#login-form form {
+#login-form form, .form form {
   width: 85%;
   padding: 10px;
   margin: auto;
@@ -295,14 +295,14 @@ nav a:hover {
   align-items: center;
   width: 100%;
 }
-#checkoutBtn button {
+#checkoutBtn button, #checkoutBtn .generic-button {
   padding: 5px 15px;
   font-size: 1em;
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
 }
-#checkoutBtn button:hover {
+#checkoutBtn button:hover, #checkoutBtn .generic-button:hover {
   background-color: #4bb2bf;
 }
 
@@ -318,7 +318,14 @@ nav a:hover {
 .checkoutRedirectChoice h3 {
   font-size: 1.1em;
 }
-.checkoutRedirectChoice button {
+.checkoutRedirectChoice a {
+  border: none;
+}
+.checkoutRedirectChoice a:hover {
+  border: none;
+  text-decoration: none;
+}
+.checkoutRedirectChoice a button {
   width: 100%;
   padding: 5px 15px;
   background-color: white;
@@ -327,9 +334,35 @@ nav a:hover {
   margin: 5px;
   font-size: 1em;
 }
-.checkoutRedirectChoice button:hover {
+.checkoutRedirectChoice a button:hover {
   cursor: pointer;
   background-color: #4bb2bf;
+}
+
+.payment form .payment-proccessing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 250px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+.payment form .payment-proccessing input {
+  scale: 3;
+  margin-left: 20px;
+}
+.payment form .payment-proccessing label {
+  font-size: 2em;
+  vertical-align: middle;
+}
+
+.grid3x1 {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+.grid3x1 input {
+  border-radius: 5px;
+  border: solid 1px black;
 }
 
 /*Random shit */
@@ -386,6 +419,17 @@ input[type=number] {
 .error p {
   text-align: center;
   width: 500px;
+}
+
+.generic-button {
+  padding: 5px 15px;
+  font-size: 1em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.generic-button:hover {
+  background-color: #4bb2bf;
 }
 
 /*# sourceMappingURL=style.css.map */

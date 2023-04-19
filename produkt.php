@@ -23,10 +23,10 @@ $pris = $produkt['pris']
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="style.css" rel="stylesheet">
-    <title><?php echo $proNavn; ?></title>
-</head>
+<?php
+$title = $proNavn;
+include("komponenter/meta.php")
+?>
 
 <body>
 <?php include("komponenter/header.html");

@@ -46,7 +46,7 @@ main, .standard-width {
     max-width: #{$netbutikkImgSize};
   }
 
-  a {
+  a{
     border: none;
 
     &:hover {
@@ -89,7 +89,7 @@ a {
 /*Login form style */
 ////////////////////////////////////////////////
 
-#login-form {
+#login-form, .form {
   width: 500px;
   background-color: lightgray;
   margin: auto;
@@ -98,7 +98,7 @@ a {
 
 }
 
-#login-form form {
+#login-form form, .form form {
   width: 85%;
   padding: 10px;
   margin: auto;
@@ -358,7 +358,8 @@ nav a {
   align-items: center;
   width: 100%;
 
-  button {
+
+  button, .generic-button {
     padding: 5px 15px;
     font-size: 1em;
     background-color: $backgroundColor;
@@ -386,8 +387,15 @@ nav a {
   h3{
     font-size: 1.1em;
   }
+    a {
+    border: none;
+    &:hover {
+      border: none;
+      text-decoration: none;
+    }
+  }
 
-  button {
+  a button {
     width: 100%;
     padding: 5px 15px;
     background-color: $backgroundColor;
@@ -403,13 +411,46 @@ nav a {
   }
 }
 
+.payment {
+  form {
+    .payment-proccessing {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 250px;
+      border: 1px solid black;
+      margin-top: 20px;
+
+      input {
+        scale: 3;
+        margin-left: 20px;
+      }
+      label {
+        font-size: 2em;
+        vertical-align: middle;
+      }
+    }
+
+  }
+}
+// for post info IKKE POST variabel
+.grid3x1 {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  input {
+    border-radius: 5px;
+    border: solid 1px $text
+  }
+}
+
 
 ////////////////////////////////////////////////////////////////
 /*Random shit */
 ////////////////////////////////////////////////////////////////
 
 .AntallVelger {
-  border: 1px solid black;
+  border: 1px solid $text;
   border-radius: 10px;
   max-width: 100px;
   display: flex;
@@ -468,3 +509,15 @@ input[type=number] {
     width: 500px;
   }
 }
+
+.generic-button {
+    padding: 5px 15px;
+    font-size: 1em;
+    background-color: $backgroundColor;
+    border: 1px solid $text;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
