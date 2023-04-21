@@ -36,7 +36,7 @@ Hele innlogging systemet og basic produkt oppretning
   - Gjorde ferdig checkoutRedirect for å gi valg om og logge inn eller fortsette uten
   - Jobbet mer med Dashboards
 ### Hva skal skje videre
-- en hjemme side
+- en hjemmeside
 - Brukertesting
 - Lage et kunde "dashboard"
 - gjøre det mulig å sortere nettbutikken
