@@ -41,9 +41,9 @@ include("../komponenter/meta.php");
                             <input type="text" name="addresse">
                         </label></div>
                     <div>
-                        <p>Post Nummer</p>
+                        <p>Postnummer</p>
                         <label>
-                            <input type="text" name="postnr">
+                            <input type="number" name="postnr">
                         </label></div>
                     <div>
                         <p>By</p>
@@ -71,7 +71,7 @@ include("../komponenter/meta.php");
                         <div>
                             <p>EpostAddresse</p>
                             <label>
-                                <input type="text" name="email"
+                                <input type="email" name="email"
                             </label></div>
                     </div>
                     <?php

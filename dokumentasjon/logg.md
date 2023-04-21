@@ -25,6 +25,15 @@ Hele innlogging systemet og basic produkt oppretning
 - [x] gjøre ferdig produkt sidene
 - [x] bytte til scss
 
+### Uke 4 plan
+- [x] Lage en checkout side
+- [x] Putte bestillinger i ordre databasen 
+- [x] Vise ordrene til kunder
+- I dybden
+  - lagde en nettside for checkout 
+  - Startet på placeOrder for å putte det i databasen
+  - Gjorde ferdig checkoutRedirect for å gi valg om og logge inn eller fortsette uten
+  - Jobbet mer med Dashboards
 ### Hva skal skje videre
 - Brukertesting
 - La kunden bestille
