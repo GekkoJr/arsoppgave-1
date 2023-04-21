@@ -26,6 +26,7 @@ Hele innlogging systemet og basic produkt oppretning
 - [x] bytte til scss
 
 ### Uke 4 plan
+- [ ] jobbe med en hjemmeside
 - [x] Lage en checkout side
 - [x] Putte bestillinger i ordre databasen 
 - [x] Vise ordrene til kunder
@@ -35,8 +36,8 @@ Hele innlogging systemet og basic produkt oppretning
   - Gjorde ferdig checkoutRedirect for å gi valg om og logge inn eller fortsette uten
   - Jobbet mer med Dashboards
 ### Hva skal skje videre
+- en hjemme side
 - Brukertesting
-- La kunden bestille
 - Lage et kunde "dashboard"
 - gjøre det mulig å sortere nettbutikken
 - en søk funksjon for produkter
