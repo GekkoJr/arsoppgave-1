@@ -6,14 +6,39 @@ $connect->select_dB("users");
 $addresse = mysqli_real_escape_string($connect ,$_POST['addresse']);
 $postnr = mysqli_real_escape_string($connect ,$_POST['postnr']);
 $by = mysqli_real_escape_string($connect ,$_POST['by']);
-$produketer = $_SESSION['handlekurv'];
+$antall = implode(",", $_SESSION['mengde']);
+$status ="mottat";
+
+$produkter = $_SESSION['handlekurv'];
+$prisPer = array();
+$sum = 0;
+
+foreach ($produkter as $element) {
+    $query = "SELECT * From produkter WHERE proID = '$element'";
+    $result = mysqli_query($connect, $query);
+    $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    print_r($result['pris']);
+    $pris = intval($result['pris']);
+    array_push($prisPer, $result['pris']);
+    $sum = $sum + $pris;
+}
+
+$prisPerS = implode(', ', $prisPer);
+$produkterS = implode(', ', $produkter);
 
 if(!$_SESSION['id']) {
     $fornavn = mysqli_real_escape_string($connect ,$_POST['fornavn']);
     $etternavn = mysqli_real_escape_string($connect , $_POST['etternavn']);
-    $epost = mysqli_real_escape_string($connect , $_POST['epost']);
+    $epost = mysqli_real_escape_string($connect , $_POST['email']);
+    $navn = $fornavn . " " . $etternavn;
 
-    $query = "INSERT INTO ordre (produkter, prisPerStk, pris, epost, navn) VALUES ($produketer)";
+    $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, navn, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$epost' , '$navn', '$addresse', '$postnr', '$by', '$antall', '$status')";
+    mysqli_query($connect,$query);
+} else {
+    $kundeID = $_SESSION['id'];
 
-
+    $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$kundeID', '$addresse', '$postnr', '$by', '$antall', '$status')";
+    mysqli_query($connect, $query);
 }
+
+header("Location: ../nettbutik.php");
