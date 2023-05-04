@@ -35,6 +35,10 @@ Hele innlogging systemet og basic produkt oppretning
   - Startet på placeOrder for å putte det i databasen
   - Gjorde ferdig checkoutRedirect for å gi valg om og logge inn eller fortsette uten
   - Jobbet mer med Dashboards
+
+### Uke 5
+- [x] Hele bestillings prossenen funker 
+- [x] Dashboard for alle roller - begynne / nesten ferdig
 ### Hva skal skje videre
 - en hjemmeside
 - Brukertesting

@@ -46,12 +46,64 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                 $page = 1;
                 $query = "SELECT * FROM ordre WHERE status = 'mottat'";
                 $result = mysqli_query($connect, $query);
-                $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $rowCount = mysqli_num_rows($result);
+                $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-                for ($i = $page; $i <= $page * $itemsPerPage; $i++) {
+                if($page * $itemsPerPage > $rowCount) {
+                    $forLong = $rowCount;
+                } else {
+                    $forLong = $itemsPerPage * $page;
+                }
+
+                for ($i = $page; $i <= $forLong; $i++) {
                     ?>
                     <div class="ordre-container">
-                        <div class="ordre-info"></div>
+                        <div class="ordre-info">
+                            <h3>
+                                Ordre:
+                                <?php echo $result[$i -1]['ordreNr'] ?>
+                            </h3>
+                            <h3>
+                                <?php
+                                if ($result[$i-1]['Navn'] !== null) {
+                                    echo $result[$i-1]['Navn'];
+                                } else {
+                                    $id = $result[$i-1]['kundeID'];
+                                    $query = "SELECT * FROM brukere WHERE id = '$id'";
+                                    $kundeArr = mysqli_query($connect ,$query);
+                                    $kundeArr = mysqli_fetch_array($kundeArr, MYSQLI_ASSOC);
+
+                                    echo $kundeArr['navn'] . " " . $kundeArr['etternavn'];
+                                }
+                                ?>
+                            </h3>
+                            <p><?php echo $result[$i-1]['addresee'] . " " . $result[$i-1]['city'] . " " . $result[$i-1]['postnr']?></p>
+                            <p id="<?php echo "part1dropdown" . $i?>">&#8595;</p>
+                        </div>
+
+                        <div class="ordre">
+                            <div class="ordre-produkt">
+                                <p></p>
+                                <p>Navn</p>
+                                <p>Antall</p>
+                                <P></P>
+                            </div>
+                            <?php
+                            $produktArr = $result[$i-1]['produkter'];
+                            $produktArr = explode(',', $produktArr);
+                            $antallArr = $result[$i-1]['antall'];
+                            $antallArr = explode(',', $antallArr);
+
+                            $proIndex = 0;
+                            foreach ($produktArr as $element) {
+                                ?>
+
+                                <?php
+                                $proIndex++;
+                            }
+                            ?>
+
+                        </div>
                     </div>
 
                     <?php
