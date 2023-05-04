@@ -46,7 +46,7 @@ main, .standard-width {
     max-width: #{$netbutikkImgSize};
   }
 
-  a{
+  a {
     border: none;
 
     &:hover {
@@ -214,11 +214,10 @@ a {
       font-size: 1.1em;
 
       &:hover {
-      background-color: mediumpurple;
+        background-color: mediumpurple;
         cursor: pointer;
       }
     }
-
 
 
     p:not(.tiny) {
@@ -242,17 +241,17 @@ a {
 }
 
 .tabcontainer {
-   > :nth-child(1) {
+  > :nth-child(1) {
     width: 100%;
     background-color: $contrast;
-     display: flex;
-     padding: 5px 10px;
-     border-radius: 10px;
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 10px;
 
-     h3 {
-       margin: 0 5px;
-     }
-}
+    h3 {
+      margin: 0 5px;
+    }
+  }
 }
 
 .tab {
@@ -354,7 +353,7 @@ nav a {
 #checkoutBtn {
   margin: auto;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   width: 100%;
 
@@ -384,11 +383,13 @@ nav a {
   max-width: 500px;
   margin: 5vh auto auto;
 
-  h3{
+  h3 {
     font-size: 1.1em;
   }
-    a {
+
+  a {
     border: none;
+
     &:hover {
       border: none;
       text-decoration: none;
@@ -425,6 +426,7 @@ nav a {
         scale: 3;
         margin-left: 20px;
       }
+
       label {
         font-size: 2em;
         vertical-align: middle;
@@ -433,6 +435,7 @@ nav a {
 
   }
 }
+
 // for post info IKKE POST variabel
 .grid3x1 {
   display: grid;
@@ -448,7 +451,46 @@ nav a {
 /* dashboard */
 ////////////////////////////////////////////////////////////////
 
+.ordre-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.main-order-container {
+  width: 100%;
+}
+
+.ordre-info {
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    flex:1;
+  }
+
+  div {
+    display: flex;
+    flex: 100%;
+    margin:0;
+
+    h3 {
+      flex:1;
+      margin:0;
+      margin-top: 10px;
+    }
+  }
+}
+
+.ordre-produkt {
+  display: grid;
+  grid-template-columns: 200px 200px 50px;
+}
+
+.hidden {
+  display: none;
+}
 
 ////////////////////////////////////////////////////////////////
 /*Random shit */
@@ -516,13 +558,13 @@ input[type=number] {
 }
 
 .generic-button {
-    padding: 5px 15px;
-    font-size: 1em;
-    background-color: $backgroundColor;
-    border: 1px solid $text;
-    border-radius: 10px;
+  padding: 5px 15px;
+  font-size: 1em;
+  background-color: $backgroundColor;
+  border: 1px solid $text;
+  border-radius: 10px;
 
-    &:hover {
-      background-color: $accent;
-    }
+  &:hover {
+    background-color: $accent;
   }
+}

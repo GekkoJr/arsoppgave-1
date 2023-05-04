@@ -42,74 +42,86 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                 <h3 class="tab">Din info</h3>
             </div>
             <div class="tab-con">
-                <?php
-                $page = 1;
-                $query = "SELECT * FROM ordre WHERE status = 'mottat'";
-                $result = mysqli_query($connect, $query);
-                $rowCount = mysqli_num_rows($result);
-                $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                <div class="main-ordre-container">
+                    <?php
+                    $page = 1;
+                    $query = "SELECT * FROM ordre WHERE status = 'mottat'";
+                    $result = mysqli_query($connect, $query);
+                    $rowCount = mysqli_num_rows($result);
+                    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-                if($page * $itemsPerPage > $rowCount) {
-                    $forLong = $rowCount;
-                } else {
-                    $forLong = $itemsPerPage * $page;
-                }
+                    if ($page * $itemsPerPage > $rowCount) {
+                        $forLong = $rowCount;
+                    } else {
+                        $forLong = $itemsPerPage * $page;
+                    }
 
-                for ($i = $page; $i <= $forLong; $i++) {
-                    ?>
-                    <div class="ordre-container">
-                        <div class="ordre-info">
-                            <h3>
-                                Ordre:
-                                <?php echo $result[$i -1]['ordreNr'] ?>
-                            </h3>
-                            <h3>
+                    for ($i = $page; $i <= $forLong; $i++) {
+                        ?>
+                        <div class="ordre-container">
+                            <div class="ordre-info">
+                                <div>
+                                    <h3>
+                                        Ordre:
+                                        <?php echo $result[$i - 1]['ordreNr'] ?>
+                                    </h3>
+                                    <h3>
+                                        <?php
+                                        if ($result[$i - 1]['Navn'] !== null) {
+                                            echo $result[$i - 1]['Navn'];
+                                        } else {
+                                            $id = $result[$i - 1]['kundeID'];
+                                            $query = "SELECT * FROM brukere WHERE id = '$id'";
+                                            $kundeArr = mysqli_query($connect, $query);
+                                            $kundeArr = mysqli_fetch_array($kundeArr, MYSQLI_ASSOC);
+
+                                            echo $kundeArr['navn'] . " " . $kundeArr['etternavn'];
+                                        }
+                                        ?>
+                                    </h3>
+                                </div>
+                                <p><?php echo "Addresse: " . $result[$i - 1]['addresee'] . " " . $result[$i - 1]['city'] . " " . $result[$i - 1]['postnr'] ?></p>
+                                <p class="dropdown-activate">&#8595;</p>
+                            </div>
+
+                            <div class="ordre dropdown-content">
+                                <div class="ordre-produkt">
+                                    <p>Navn</p>
+                                    <p>Antall</p>
+                                    <P></P>
+                                </div>
                                 <?php
-                                if ($result[$i-1]['Navn'] !== null) {
-                                    echo $result[$i-1]['Navn'];
-                                } else {
-                                    $id = $result[$i-1]['kundeID'];
-                                    $query = "SELECT * FROM brukere WHERE id = '$id'";
-                                    $kundeArr = mysqli_query($connect ,$query);
-                                    $kundeArr = mysqli_fetch_array($kundeArr, MYSQLI_ASSOC);
+                                $produktArr = $result[$i - 1]['produkter'];
+                                $produktArr = explode(',', $produktArr);
+                                $antallArr = $result[$i - 1]['antall'];
+                                $antallArr = explode(',', $antallArr);
 
-                                    echo $kundeArr['navn'] . " " . $kundeArr['etternavn'];
+                                $proIndex = 0;
+                                foreach ($produktArr as $element) {
+                                    $query = "SELECT * FROM produkter WHERE proID = '$element'";
+                                    $produkt = mysqli_query($connect, $query);
+                                    $produkt = mysqli_fetch_array($produkt, MYSQLI_ASSOC);
+
+                                    ?>
+                                    <div class="ordre-produkt">
+                                        <p><?php echo $produkt['proNavn'] ?> </p>
+                                        <p><?php echo $antallArr[$proIndex] ?></p>
+                                        <input type="checkbox">
+                                    </div>
+
+                                    <?php
+                                    $proIndex++;
                                 }
                                 ?>
-                            </h3>
-                            <p><?php echo $result[$i-1]['addresee'] . " " . $result[$i-1]['city'] . " " . $result[$i-1]['postnr']?></p>
-                            <p id="<?php echo "part1dropdown" . $i?>">&#8595;</p>
-                        </div>
-
-                        <div class="ordre">
-                            <div class="ordre-produkt">
-                                <p></p>
-                                <p>Navn</p>
-                                <p>Antall</p>
-                                <P></P>
+                                <button>fullfør ordre</button>
                             </div>
-                            <?php
-                            $produktArr = $result[$i-1]['produkter'];
-                            $produktArr = explode(',', $produktArr);
-                            $antallArr = $result[$i-1]['antall'];
-                            $antallArr = explode(',', $antallArr);
-
-                            $proIndex = 0;
-                            foreach ($produktArr as $element) {
-                                ?>
-
-                                <?php
-                                $proIndex++;
-                            }
-                            ?>
-
                         </div>
-                    </div>
 
-                    <?php
-                }
+                        <?php
+                    }
 
-                ?>
+                    ?>
+                </div>
             </div>
             <div class="tab-con">
 
@@ -127,6 +139,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
 
             </div>
         </div>
+        <script src="/js/dropdown.js"></script>
         <script src="/js/tabs.js"></script>
     </main>
     </body>
