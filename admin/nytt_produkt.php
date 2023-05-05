@@ -11,6 +11,7 @@ if ($_SESSION['admin'] === true) {
     $miBe = $_POST['minibeskriv'];
     $beskriv = $_POST['beskriv'];
     $pris = $_POST['pris'];
+    $AntallPaLager = $_POST['Antall'];
     $masterOK = true; // en sjekk som ligger i programet og som kan stoppe opplastningen av ting
 
     //definerer variabler som blir brukt senere
@@ -75,9 +76,10 @@ if ($_SESSION['admin'] === true) {
 
     }
     $arrayIMG = implode(" $,$ ", $images);
-    $query = "INSERT INTO produkter (image , proNavn, miniBeskriv, beskrivelse, pris, dirNavn) VALUES ('$arrayIMG' , '$pNavn', '$miBe', '$beskriv', '$pris', '$pNavn')";
+    $query = "INSERT INTO produkter (image , proNavn, miniBeskriv, beskrivelse, pris, dirNavn, Antall) VALUES ('$arrayIMG' , '$pNavn', '$miBe', '$beskriv', '$pris', '$pNavn', '$AntallPaLager');";
     if ($masterOK) {
         mysqli_query($connect, $query);
+        header("Location: dashboard.php");
     }
 } else {
     echo "Ingen tilgang";

@@ -13,13 +13,28 @@ if ($_SESSION['admin']) {
     <title>Nytt produkt</title>
 </head>
 <body>
-    <form action="nytt_produkt.php" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="Asus gtx 1070" name="pNavn">
-        <input type="text" placeholder="8Gb vram zoom" name="minibeskriv">
-        <input type="text" placeholder="Dette produktet..." name="beskriv">
-        <input type="number" placeholder="420.69" name="pris">
+    <form action="nytt_produkt.php" method="post" enctype="multipart/form-data" class="nytt-produkt">
+        <label>Produktnavn &#8205 &#8205 &#8205 &#8205 &#8205
+        <input type="text" placeholder="Asus gtx 1070" name="pNavn"></label>
+        <label>
+            Kort beskrvelse
+            <input type="text" placeholder="8Gb vram zoom" name="minibeskriv">
+        </label>
+        <label>Full beskrivelse
+            <input type="text" placeholder="Dette produktet..." name="beskriv">
+        </label>
+        <label>
+            Pris &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205
+             &#8205 &#8205 &#8205
+            <input type="number" placeholder="420.69" name="pris">
+        </label>
+        <label>
+            Antall på lager &#8205 &#8205
+            <input type="text" placeholder="30" name="Antall">
+        </label>
+        <p>Last opp produkt bilder:</p>
         <input type="file" name="uploadImg[]" id="uploadImg" multiple>
-        <button type="submit" name="upload">Last opp</button>
+        <button class="generic-button" type="submit" name="upload">Last opp</button>
     </form>
 
 </body>
@@ -29,5 +44,5 @@ if ($_SESSION['admin']) {
     include("../komponenter/unathorized.html");
 }
 ?>
-<
+
 
