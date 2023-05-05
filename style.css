@@ -441,6 +441,7 @@ nav a:hover {
 .AntallVelger input {
   border: none;
   overflow: hidden;
+  height: fit-content;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
