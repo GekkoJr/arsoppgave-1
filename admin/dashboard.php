@@ -33,6 +33,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                 if ($_SESSION['admin'] === true) {
                     ?>
                     <h3 class="tab">Brukere</h3>
+                    <h3 class="tab">Legg til produkt</h3>
                     <?php
                 }
                 ?>
@@ -224,8 +225,8 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                     }
                     ?>
                     <div class="sidevalg">
-                        <a href="dashboard.php?page1=<?php echo $page2 - 1 ?>"><p>-</p></a>
-                        <p><?php echo $page2 ?></p><a href="dashboard.php?page1=<?php echo $page + 1 ?>"><P>+</P></a>
+                        <a href="dashboard.php?page2=<?php echo $page2 - 1 ?>"><p>-</p></a>
+                        <p><?php echo $page2 ?></p><a href="dashboard.php?page2=<?php echo $page2 + 1 ?>"><P>+</P></a>
                     </div>
 
                 </div>
@@ -236,7 +237,6 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
             ?>
             <div class="tab-con">
                 <?php
-
                 if ($_GET['page3']) {
                     $page3 = $_GET['page3'];
                 } else {
@@ -259,15 +259,47 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                 }
 
                 ?>
-                <table>
-                    <?php
-                    for ($i = $startValue; $i <= $forLong; $i++) {
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>KundeID</th>
+                            <th>Fornavn</th>
+                            <th>Etternavn</th>
+                            <th>Epost</th>
+                            <th>Ordre Rettigheter</th>
+                            <th>Admin</th>
+                            <th></th>
+                        </tr>
+                        <?php
+                        for ($i = $startValue; $i <= $forLong; $i++) {
+                            ?>
+                            <tr>
+                                <td><?php echo $result[$i - 1]['ID'] ?></td>
+                                <td><?php echo $result[$i - 1]['navn'] ?></td>
+                                <td><?php echo $result[$i - 1]['etternavn'] ?></td>
+                                <td><?php echo $result[$i - 1]['mail'] ?></td>
+                                <td><?php echo $result[$i - 1]['ordePerson'] ?></td>
+                                <td><?php echo $result[$i - 1]['admin'] ?></td>
 
-                    }
+                            </tr>
+                            <?php
+                        }
 
-                    ?>
-                </table>
+                        ?>
+                    </table>
+                    <div class="sidevalg">
+                        <a href="dashboard.php?page3=<?php echo $page3 - 1 ?>"><p>-</p></a>
+                        <p><?php echo $page3 ?></p><a href="dashboard.php?page3=<?php echo $page3 + 1 ?>"><P>+</P></a>
+                    </div>
+                </div>
             </div>
+            <div class="tab-con">
+                <?php
+                include('nytt_produktF.php');
+                ?>
+
+            </div>
+
             <?php
         }
         ?>

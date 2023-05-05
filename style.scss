@@ -504,6 +504,39 @@ nav a {
   }
 }
 
+table {
+
+  width: 100%;
+
+  th {
+    text-align: left;
+    border-bottom: 1px solid $text;
+  }
+
+  td {
+    border-right: 1px solid $text;
+    padding: 3px 5px;
+  }
+}
+
+.nytt-produkt {
+  margin-top: 15px;
+  display:grid;
+  grid-template-rows: repeat(6, 60px);
+
+  input:not([type="file"]), button {
+    width: 300px;
+    border-radius: 10px;
+    height: 40px;
+    box-shadow: none;
+    border: 1px solid $text;
+  }
+
+  button {
+    margin: 5px 0;
+  }
+}
+
 ////////////////////////////////////////////////////////////////
 /*Random shit */
 ////////////////////////////////////////////////////////////////
