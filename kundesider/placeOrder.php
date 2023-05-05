@@ -41,4 +41,4 @@ if(!$_SESSION['id']) {
     mysqli_query($connect, $query);
 }
 
-header("Location: ../nettbutik.php");
+header("Location: ../nettbutikk.php");

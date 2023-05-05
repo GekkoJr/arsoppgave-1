@@ -452,7 +452,7 @@ nav a {
 ////////////////////////////////////////////////////////////////
 
 .ordre-container {
-  width: 100%;
+  width: 450px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -490,6 +490,18 @@ nav a {
 
 .hidden {
   display: none;
+}
+
+.sidevalg {
+  display: flex;
+  width: 100px;
+
+  p {
+    font-size: 1.1em;
+    border: 1px solid $text;
+    padding: 5px 10px;
+    border-radius:10px
+  }
 }
 
 ////////////////////////////////////////////////////////////////
