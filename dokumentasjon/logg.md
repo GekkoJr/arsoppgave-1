@@ -38,7 +38,8 @@ Hele innlogging systemet og basic produkt oppretning
 
 ### Uke 5
 - [x] Hele bestillings prossenen funker 
-- [x] Dashboard for alle roller - begynne / nesten ferdig
+- [x] Dashboard for alle roller ferdig
+- [x] Nesten alt tekniske er ferdig
 ### Hva skal skje videre
 - en hjemmeside
 - Brukertesting
