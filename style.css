@@ -177,7 +177,7 @@ a:hover {
   font-size: 1.1em;
 }
 .kjop-container form button[type=submit]:hover {
-  background-color: mediumpurple;
+  background-color: #c0ddf3;
   cursor: pointer;
 }
 .kjop-container form p:not(.tiny) {
@@ -261,6 +261,48 @@ nav a:hover {
 #logo {
   width: 50px;
   height: auto;
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid black;
+  width: 99%;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+}
+footer div p {
+  text-align: center;
+  margin: 5px 0 0;
+  padding: 0;
+}
+footer div div {
+  display: flex;
+}
+footer div div div {
+  margin: auto 20px;
+}
+footer div div div ul {
+  list-style: none;
+}
+footer div div div ul :nth-child(1) {
+  margin: 0;
+  display: block;
+}
+footer div div div ul :nth-child(1) p {
+  text-align: left;
+}
+footer div div div ul :not(:nth-child(1)) a {
+  color: darkgrey;
+  border: none;
+  margin: 2px 0;
+  padding: 0;
+  display: block;
+}
+footer div div div ul :not(:nth-child(1)) a:hover {
+  border: none;
 }
 
 /* Handlekurv style */

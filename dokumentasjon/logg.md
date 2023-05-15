@@ -40,10 +40,16 @@ Hele innlogging systemet og basic produkt oppretning
 - [x] Hele bestillings prossenen funker 
 - [x] Dashboard for alle roller ferdig
 - [x] Nesten alt tekniske er ferdig
+
+### Uke 6 
+- [x] Logo 
+- [x] Design manual
+- [x] Footer
+- [x] Reklame
+
 ### Hva skal skje videre
 - en hjemmeside
 - Brukertesting
-- Lage et kunde "dashboard"
 - gjøre det mulig å sortere nettbutikken
 - en søk funksjon for produkter
 - redigering av produkter

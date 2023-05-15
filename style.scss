@@ -217,7 +217,7 @@ a {
       font-size: 1.1em;
 
       &:hover {
-        background-color: mediumpurple;
+        background-color: $accent;
         cursor: pointer;
       }
     }
@@ -293,7 +293,6 @@ header div div a {
 }
 
 
-
 header div img {
   height: 30px;
   width: auto;
@@ -322,6 +321,64 @@ nav a {
 #logo {
   width: 50px;
   height: auto;
+}
+
+////////////////////////////////////////////////////////////////
+/* footer */
+////////////////////////////////////////////////////////////////
+
+footer {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid $text;
+  width: 99%;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+
+  div {
+
+    p {
+      text-align: center;
+      margin: 5px 0 0;
+      padding: 0;
+    }
+
+    div {
+      display: flex;
+
+      div {
+        margin: auto 20px;
+
+        ul {
+
+          list-style: none;
+
+          :nth-child(1) {
+            margin: 0;
+            display: block;
+
+            p {
+              text-align: left;
+            }
+          }
+
+          :not(:nth-child(1)) a {
+            color: darkgrey;
+            border: none;
+            margin: 2px 0;
+            padding: 0;
+            display: block;
+
+            &:hover {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
 ////////////////////////////////////////////////////////////////
@@ -477,17 +534,17 @@ nav a {
   flex-wrap: wrap;
 
   p {
-    flex:1;
+    flex: 1;
   }
 
   div {
     display: flex;
     flex: 100%;
-    margin:0;
+    margin: 0;
 
     h3 {
-      flex:1;
-      margin:0;
+      flex: 1;
+      margin: 0;
       margin-top: 10px;
     }
   }
@@ -510,7 +567,7 @@ nav a {
     font-size: 1.1em;
     border: 1px solid $text;
     padding: 5px 10px;
-    border-radius:10px
+    border-radius: 10px
   }
 }
 
@@ -531,7 +588,7 @@ table {
 
 .nytt-produkt {
   margin-top: 15px;
-  display:grid;
+  display: grid;
   grid-template-rows: repeat(6, 60px);
 
   input:not([type="file"]), button {

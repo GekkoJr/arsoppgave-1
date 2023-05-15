@@ -12,7 +12,7 @@ $count = mysqli_num_rows($result);
 //print_r($rows[1]['proID']); henter rad 1(2) sin proID
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <?php
 $title = "Digistore nettbutikk";
 include("komponenter/meta.php") ?>
@@ -48,6 +48,9 @@ include("komponenter/meta.php") ?>
         <?php } ?>
     </div>
 </main>
+<?php
+include('komponenter/footer.html');
+?>
 </body>
 </html>
 
