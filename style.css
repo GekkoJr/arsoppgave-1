@@ -559,4 +559,9 @@ input[type=number] {
   background-color: #c0ddf3;
 }
 
+article {
+  max-width: 700px;
+  margin: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
