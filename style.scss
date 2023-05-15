@@ -8,8 +8,10 @@ $netbutikkImgSize: 200px;
 $backgroundColor: white;
 $text: black;
 $contrast: #eceff1;
-$contrast2: #4bb2bf;
-$accent: #4bb2bf;
+$contrast2: #c0ddf3;
+$accent: #c0ddf3;
+
+// #4bb2bf
 
 
 body {
@@ -290,6 +292,8 @@ header div div a {
   }
 }
 
+
+
 header div img {
   height: 30px;
   width: auto;
@@ -313,6 +317,11 @@ nav a {
     border: none;
     transform: scale(1.1);
   }
+}
+
+#logo {
+  width: 50px;
+  height: auto;
 }
 
 ////////////////////////////////////////////////////////////////

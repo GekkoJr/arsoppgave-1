@@ -258,6 +258,11 @@ nav a:hover {
   transform: scale(1.1);
 }
 
+#logo {
+  width: 50px;
+  height: auto;
+}
+
 /* Handlekurv style */
 .handlekurv-item {
   display: grid;
@@ -304,7 +309,7 @@ nav a:hover {
   border-radius: 10px;
 }
 #checkoutBtn button:hover, #checkoutBtn .generic-button:hover {
-  background-color: #4bb2bf;
+  background-color: #c0ddf3;
 }
 
 /* checkout + checkout redirect */
@@ -337,7 +342,7 @@ nav a:hover {
 }
 .checkoutRedirectChoice a button:hover {
   cursor: pointer;
-  background-color: #4bb2bf;
+  background-color: #c0ddf3;
 }
 
 .payment form .payment-proccessing {
@@ -509,7 +514,7 @@ input[type=number] {
   border-radius: 10px;
 }
 .generic-button:hover {
-  background-color: #4bb2bf;
+  background-color: #c0ddf3;
 }
 
 /*# sourceMappingURL=style.css.map */
