@@ -11,7 +11,8 @@
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/../../Desktop/php-8.2.1-Win32-vs16-x64" />
+      <path value="$USER_HOME$/Desktop/php-8.2.1-Win32-vs16-x64" />
+      <path value="$USER_HOME$/Downloads/php-8.2.6.tar/php-8.2.6" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
