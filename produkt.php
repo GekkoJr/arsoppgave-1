@@ -106,7 +106,7 @@ if ($_POST['antall']) {
 
     <div class="tabcontainer">
         <div>
-            <h3 class="tab">Produkt detaljer</h3>
+            <h3 class="tab">Produktdetaljer</h3>
             <h3 class="tab">Annmeldelser</h3>
         </div>
         <div class="tab-con">
