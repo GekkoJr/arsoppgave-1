@@ -313,7 +313,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
 
             ?>
         </div>
-        </div>
+
         <script src="/js/dropdown.js"></script>
         <script src="/js/tabs.js"></script>
     </main>
