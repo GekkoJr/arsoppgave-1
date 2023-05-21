@@ -64,6 +64,7 @@ main {
 .product-gallery {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 
   a div {
     max-width: #{$netbutikkImgSize};
@@ -718,7 +719,6 @@ table {
 }
 
 
-
 ////////////////////////////////////////////////////////////////
 /*Random shit */
 ////////////////////////////////////////////////////////////////
@@ -775,7 +775,6 @@ input[type=number] {
   grid-template-rows: auto;
 
   img {
-    width: 500px;
     width: auto;
   }
 
@@ -800,4 +799,63 @@ input[type=number] {
 article {
   max-width: 700px;
   margin: auto;
+}
+
+
+// tilpasninger for mobil
+@media only screen and (max-width: 728px) {
+  main {
+    width: 100%;
+  }
+
+  header div div a img {
+    height: 20px;
+  }
+
+  header div img {
+    height: 20px;
+    width: auto;
+  }
+
+  .logo-bar {
+    grid-template-columns: auto auto auto;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+
+  nav a {
+    font-size: 1em;
+    margin: 0;
+
+  }
+
+  #logo {
+    width: 20px;
+    height: auto;
+  }
+
+  .product-gallery {
+    justify-content: center;
+  }
+
+  .produkt {
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    div {
+      flex: 100%;
+    }
+  }
+
+  .kjop-container {
+    height: fit-content;
+    margin-bottom: 10px;
+
+    form{
+      height: fit-content;
+    }
+  }
+
 }

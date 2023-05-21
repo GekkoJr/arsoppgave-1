@@ -118,6 +118,9 @@ if ($_POST['antall']) {
         <script src="js/tabs.js"></script>
         <script src="js/velgAntall.js"></script>
 </main>
+<?php
+include("komponenter/footer.html")
+?>
 </body>
 
 
