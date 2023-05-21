@@ -831,6 +831,10 @@ article {
 
   }
 
+  header {
+    margin-bottom: 15px;
+  }
+
   #logo {
     width: 20px;
     height: auto;
@@ -858,4 +862,48 @@ article {
     }
   }
 
+  .toHide{
+    display: none;
+  }
+
+  .handlekurv-item {
+    grid-template-columns: repeat(4, auto);
+
+    :nth-child(2) {
+      font-size: 15px;
+    }
+
+    img, :nth-child(4) {
+      display: none;
+    }
+  }
+
+  .AntallVelger {
+  border: 1px solid $text;
+  border-radius: 10px;
+  max-width: 50px;
+  display: flex;
+  max-height: 30px;
+  background-color: #{$backgroundColor};
+
+  input, p {
+    flex: 1;
+    height:25px;
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+}
 }

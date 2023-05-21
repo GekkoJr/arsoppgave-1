@@ -9,13 +9,13 @@ $connect->select_db("users");
 <body>
 <?php include("../komponenter/header.html"); ?>
 <main>
-    <div class="handlekurv-item">
-        <br>
+    <div class="handlekurv-item toHide">
+        <br class="toHide">
         <p>produkt</p>
         <p>Antall</p>
-        <p>Pris .stk</p>
+        <p class="toHide">Pris .stk</p>
         <p>Totalt</p>
-        <br>
+        <br class="toHide">
     </div>
     <?php
     if ($_SESSION['handlekurv']) {
@@ -66,8 +66,6 @@ $connect->select_db("users");
     <h1 class="center">Du har ingen produkter i handlevognen</h1>
     <?php
     }
-
-
     ?>
 
 </main>
