@@ -3,17 +3,18 @@
 $userToEdit = mysqli_real_escape_string($connect, $userToEdit);
 $query = "SELECT * from brukere where ID='$userToEdit'";
 $result = mysqli_fetch_array(mysqli_query($connect, $query), MYSQLI_ASSOC);
-$_SESSION['toEdit'] = $userToEdit;
+
 
 ?>
 <form method="post" action="/komponenter/updateUserInfo.php">
     <div class="userInfo-Container">
         <p>Fornavn</p>
-        <label><input type="text" value="<?php echo $result['navn'] ?>"></label>
+        <label><input type="text" name="navn" value="<?php echo $result['navn'] ?>"></label>
         <p>Etternavn</p>
-        <label><input type="text" value="<?php echo $result['etternavn'] ?>"></label>
+        <label><input type="text" name="etternavn" value="<?php echo $result['etternavn'] ?>"></label>
         <p>Epost</p>
-        <label><input type="email" value="<?php echo $result['mail'] ?>"></label>
+        <label><input type="email" name="mail" value="<?php echo $result['mail'] ?>"></label>
+        <input style="display: none" type="text" name="toEdit" value="<?php echo $userToEdit ?>">
         <?php
 
         if ($_SESSION['admin'] === true) {
