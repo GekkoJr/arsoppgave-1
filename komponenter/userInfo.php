@@ -6,7 +6,7 @@ $result = mysqli_fetch_array(mysqli_query($connect, $query), MYSQLI_ASSOC);
 $_SESSION['toEdit'] = $userToEdit;
 
 ?>
-<form method="post">
+<form method="post" action="/komponenter/updateUserInfo.php">
     <div class="userInfo-Container">
         <p>Fornavn</p>
         <label><input type="text" value="<?php echo $result['navn'] ?>"></label>
@@ -36,8 +36,10 @@ $_SESSION['toEdit'] = $userToEdit;
                         ?>
                     ></label>
             </div>
+
             <?php
         }
         ?>
+        <button style="margin-top: 10px; " type="submit" class="generic-button">Save</button>
     </div>
 </form>

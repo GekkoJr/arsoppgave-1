@@ -307,7 +307,11 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
         }
         ?>
         <div class="tab-con">
+            <?php
+            $userToEdit = $_SESSION['id'];
+            include("../komponenter/userInfo.php")
 
+            ?>
         </div>
         </div>
         <script src="/js/dropdown.js"></script>
