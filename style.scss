@@ -673,7 +673,7 @@ table {
 
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through 5 {
   #color#{$i} {
     background-color: nth($fargeAArr, $i);
     border: 1px solid $text;

@@ -18,7 +18,7 @@ include("komponenter/header.html");
                 <img src="ikoner/LogoandTEXT.svg" alt="full logo sort tekst">
             </div>
             <div>
-                <img src="ikoner/LogoandTextHvit.svg">
+                <img src="ikoner/LogoandTextHvit.svg" alt="full logo hvit med tekst">
             </div>
         </div>
         <h2>Logo</h2>
@@ -65,9 +65,9 @@ include("komponenter/header.html");
                                 <p>CMYK:</p>
                             </div>
                             <div>
-                                <p></p>
-                                <p></p>
-                                <p></p>
+                                <p>#000000</p>
+                                <p>0, 0, 0</p>
+                                <p>0, 0, 0, 100</p>
                             </div>
 
                         </div>
@@ -88,11 +88,11 @@ include("komponenter/header.html");
                                 <p>CMYK:</p>
                             </div>
                             <div>
-                                <p></p>
-                                <p></p>
-                                <p></p>
+                                <p>#eceff1</p>
+                                <p>236, 239, 241</p>
+                                <p>2, 1, 0, 5</p>
                             </div>
-                            <p></p>
+
                         </div>
                     </div>
                 </div>
@@ -111,11 +111,11 @@ include("komponenter/header.html");
                                 <p>CMYK:</p>
                             </div>
                             <div>
-                                <p></p>
-                                <p></p>
-                                <p></p>
+                                <p>#c0ddf3</p>
+                                <p>192, 221, 243</p>
+                                <p>21, 9, 0, 5</p>
                             </div>
-                            <p></p>
+
                         </div>
                     </div>
                 </div>
@@ -134,16 +134,19 @@ include("komponenter/header.html");
                                 <p>CMYK:</p>
                             </div>
                             <div>
-                                <p></p>
-                                <p></p>
-                                <p></p>
+                                <p>#aa97cf</p>
+                                <p>170, 151, 207</p>
+                                <p>18, 27, 0, 19</p>
                             </div>
-                            <p></p>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <h2>Font</h2>
+        <p>Fontet som blir brukt er Roboto. Denne skrfttypen blir brukt overalt på hele nettsiden og kan brukes på alle flater.
+        Den ble valgt for det moderne utryket og enkle lesbarhet.</p>
     </article>
 </main>
 <?php
