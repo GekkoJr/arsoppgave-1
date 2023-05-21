@@ -41,6 +41,6 @@ $result = mysqli_fetch_array(mysqli_query($connect, $query), MYSQLI_ASSOC);
             <?php
         }
         ?>
-        <button style="margin-top: 10px; " type="submit" class="generic-button">Save</button>
+        <button style="margin-top: 10px; display: block " type="submit" class="generic-button">Save</button>
     </div>
 </form>
