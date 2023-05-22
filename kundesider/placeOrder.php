@@ -3,11 +3,11 @@ session_start();
 include("../tilkoble.php");
 $connect->select_dB("users");
 
-$addresse = mysqli_real_escape_string($connect ,$_POST['addresse']);
-$postnr = mysqli_real_escape_string($connect ,$_POST['postnr']);
-$by = mysqli_real_escape_string($connect ,$_POST['by']);
+$addresse = mysqli_real_escape_string($connect, $_POST['addresse']);
+$postnr = mysqli_real_escape_string($connect, $_POST['postnr']);
+$by = mysqli_real_escape_string($connect, $_POST['by']);
 $antall = implode(",", $_SESSION['mengde']);
-$status ="mottat";
+$status = "mottat";
 
 $produkter = $_SESSION['handlekurv'];
 $prisPer = array();
@@ -26,19 +26,25 @@ foreach ($produkter as $element) {
 $prisPerS = implode(', ', $prisPer);
 $produkterS = implode(', ', $produkter);
 
-if(!$_SESSION['id']) {
-    $fornavn = mysqli_real_escape_string($connect ,$_POST['fornavn']);
-    $etternavn = mysqli_real_escape_string($connect , $_POST['etternavn']);
-    $epost = mysqli_real_escape_string($connect , $_POST['email']);
-    $navn = $fornavn . " " . $etternavn;
+if ($_POST['paid']) {
+    if (!$_SESSION['id']) {
+        $fornavn = mysqli_real_escape_string($connect, $_POST['fornavn']);
+        $etternavn = mysqli_real_escape_string($connect, $_POST['etternavn']);
+        $epost = mysqli_real_escape_string($connect, $_POST['email']);
+        $navn = $fornavn . " " . $etternavn;
 
-    $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, navn, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$epost' , '$navn', '$addresse', '$postnr', '$by', '$antall', '$status')";
-    mysqli_query($connect,$query);
+        $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, navn, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$epost' , '$navn', '$addresse', '$postnr', '$by', '$antall', '$status')";
+        mysqli_query($connect, $query);
+    } else {
+        $kundeID = $_SESSION['id'];
+
+        $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$kundeID', '$addresse', '$postnr', '$by', '$antall', '$status')";
+        mysqli_query($connect, $query);
+    }
+    header("Location: ../nettbutikk.php");
 } else {
-    $kundeID = $_SESSION['id'];
-
-    $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$kundeID', '$addresse', '$postnr', '$by', '$antall', '$status')";
-    mysqli_query($connect, $query);
+    echo "Error: Betaling failed";
+    echo "<a href='checkout.php'><button>Gå tilbake</button></a>";
 }
 
-header("Location: ../nettbutikk.php");
+

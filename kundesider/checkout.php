@@ -29,11 +29,12 @@ include("../komponenter/meta.php");
         <form method="post" action="placeOrder.php">
             <div class="payment-proccessing">
                 <label>
-                    <input type="checkbox" id="paid">
+                    <input type="checkbox" name="paid" id="paid">
                     Bank info / kort
                 </label>
             </div>
             <div class="info">
+                <p>Dette er ikke en ekte nettbutikk og ingen penger vil bli trukket eller noen produkter sendt.</p>
                 <div class="grid3x1">
                     <div>
                         <p>Addresse</p>

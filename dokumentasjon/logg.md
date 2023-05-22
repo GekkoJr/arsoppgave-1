@@ -47,6 +47,11 @@ Hele innlogging systemet og basic produkt oppretning
 - [x] Footer
 - [x] Reklame
 
+
+### Uke 7 
+- [x] Fullføre nettside 
+- [x] Starte bruker testing
+
 ### Hva skal skje videre
 - en hjemmeside
 - Brukertesting

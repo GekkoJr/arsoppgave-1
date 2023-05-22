@@ -926,4 +926,22 @@ article {
 
     }
   }
+
+  .ordre-info {
+    div {
+      flex-wrap: wrap;
+
+      h3 {
+        flex: 100%;
+      }
+    }
+  }
+
+  .grid3x1 {
+    grid-template-columns: auto;
+    input {
+      width: 95%;
+      height: 35px;
+    }
+  }
 }
