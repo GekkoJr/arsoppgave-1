@@ -857,12 +857,12 @@ article {
     height: fit-content;
     margin-bottom: 10px;
 
-    form{
+    form {
       height: fit-content;
     }
   }
 
-  .toHide{
+  .toHide {
     display: none;
   }
 
@@ -876,34 +876,33 @@ article {
     img, :nth-child(4) {
       display: none;
     }
-  }
 
-  .AntallVelger {
-  border: 1px solid $text;
-  border-radius: 10px;
-  max-width: 50px;
-  display: flex;
-  max-height: 30px;
-  background-color: #{$backgroundColor};
+    div div.AntallVelger {
+      border: 1px solid $text;
+      border-radius: 10px;
+      max-width: 50px;
+      display: flex;
+      max-height: 30px;
+      background-color: #{$backgroundColor};
 
-  input, p {
-    flex: 1;
-    height:25px;
-    text-align: center;
-    margin: auto;
-    font-size: 15px;
-  }
+      input, p {
+        flex: 1;
+        height: 25px;
+        text-align: center;
+        margin: auto;
+        font-size: 15px;
+      }
 
-  p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    &:hover {
-      cursor: pointer;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
+
   }
-
-
-}
 }

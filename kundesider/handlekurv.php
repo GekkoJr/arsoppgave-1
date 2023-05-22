@@ -49,8 +49,9 @@ $connect->select_db("users");
                 </div>
             </form>
         <?php
-        }
         $index++;
+        }
+
         ?>
             <div>
                 <form id="checkoutBtn" action="checkoutRedirect.php">
