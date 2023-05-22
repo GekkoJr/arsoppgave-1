@@ -905,4 +905,25 @@ article {
     }
 
   }
+
+  #login-form {
+    width: 100%;
+
+    form {
+      width: 90%;
+
+      div, #sub-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .tabBar {
+    display: flex;
+    flex-wrap: wrap;
+
+    h3 {
+
+    }
+  }
 }

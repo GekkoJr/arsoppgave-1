@@ -83,7 +83,7 @@ if ($_POST['antall']) {
         </div>
         <div class="kjop-container">
             <h2><?php echo $pris . " kr" ?></h2>
-            <p>ANTALL STJERNER KOMMER HER</p>
+            <p style="margin-left: 10px">Det er ingen anmeldelser her</p>
             <form action="produkt.php?id=<?php echo $produktID ?>" method="post">
                 <input style="display:none" value="<?php echo $produktID; ?>" name="leggTil">
                 <p>Antall</p>
@@ -110,10 +110,10 @@ if ($_POST['antall']) {
             <h3 class="tab">Annmeldelser</h3>
         </div>
         <div class="tab-con">
-            <p><?php echo $produkt['beskrivelse'] ?></p>
+            <p style="margin-left: 10px"><?php echo $produkt['beskrivelse'] ?></p>
         </div>
         <div class="tab-con">
-            <p>Det er ingen annmeldeser tilgjegelig</p>
+            <p style="margin-left: 10px">Det er ingen annmeldeser tilgjegelig</p>
         </div>
         <script src="js/tabs.js"></script>
         <script src="js/velgAntall.js"></script>

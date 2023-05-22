@@ -26,7 +26,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
         </h2>
 
         <div class="tabcontainer">
-            <div>
+            <div class="tabBar">
                 <h3 class="tab">Nye-ordre</h3>
                 <h3 class="tab">fullførte-ordre</h3>
                 <?php
@@ -212,7 +212,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                                     <div class="ordre-produkt">
                                         <p><?php echo $produkt['proNavn'] ?> </p>
                                         <p><?php echo $antallArr[$proIndex] ?></p>
-                                        <input type="checkbox">
+
                                     </div>
 
                                     <?php
