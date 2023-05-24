@@ -3,7 +3,7 @@ session_start();
 include('../tilkoble.php');
 $connect->select_db('users');;
 if ($_SESSION['id']) {
-
+    // er kommentarer som beskriver ting i admin dashboard (de er nesten like)
     $itemsPerPage = 24;
 
     ?>

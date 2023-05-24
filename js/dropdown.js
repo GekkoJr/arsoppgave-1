@@ -6,7 +6,7 @@ dcon.forEach(element => {
     toggle(element)
 })
 
-
+// bytter mellom hidden og ikke hidden
 function toggle(element) {
     if (element.classList.contains('hidden')) {
         element.classList.remove('hidden')
@@ -15,6 +15,7 @@ function toggle(element) {
     }
 }
 
+// gjør droppdown greie
 dact.forEach(element => {
     let item = index
     element.addEventListener('click', () => {

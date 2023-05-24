@@ -1,9 +1,12 @@
 let slideIndex = 1;
 visShlide(slideIndex)
 
+// flytt slide index med så mye
 function bytt(x) {
     visShlide(slideIndex += x)
 }
+
+// viser bilde i karusselen
 function visShlide(x) {
     let i;
     let bilder = document.getElementsByClassName("slide");

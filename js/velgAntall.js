@@ -2,6 +2,7 @@ let number = document.querySelectorAll('.numberDisplay');
 let pluss = document.querySelectorAll('.pluss');
 let minus = document.querySelectorAll('.minus');
 let index = 0;
+// legger til eventlistners og endre value når de trykkes
 number.forEach( element => {
     pluss[index].addEventListener("click",() =>{
         element.value = parseInt(element.value) + 1;

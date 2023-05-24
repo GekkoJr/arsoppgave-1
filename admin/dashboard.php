@@ -3,7 +3,7 @@ session_start();
 include('../tilkoble.php');
 $connect->select_db('users');;
 if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
-
+    // hvor mange elementer som skal lastes inn per side
     $itemsPerPage = 24;
 
     ?>
@@ -18,6 +18,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
     <main>
         <h2>Velkommen tilbake
             <?php
+            // ønsker velkommen til brukkeren
             $id = $_SESSION['id'];
             $personNavn = mysqli_query($connect, "SELECT navn FROM brukere WHERE ID='$id'");
             $personNavn = mysqli_fetch_array($personNavn, MYSQLI_ASSOC);
@@ -42,12 +43,13 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
             <div class="tab-con">
                 <div class="main-ordre-container">
                     <?php
-
+                    // finner hvilken sisde du er på = hvilke elementer å vise
                     if ($_GET['page1']) {
                         $page = $_GET['page1'];
                     } else {
                         $page = 1;
                     }
+                    // henter bestillinger
                     $query = "SELECT * FROM ordre WHERE status = 'mottat'";
                     $result = mysqli_query($connect, $query);
                     $rowCount = mysqli_num_rows($result);
@@ -63,7 +65,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                     if ($startValue === 0) {
                         $startValue = 1;
                     }
-
+                    // viser vær ordre
                     for ($i = $startValue; $i <= $forLong; $i++) {
                         ?>
                         <div class="ordre-container">
@@ -75,6 +77,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                                     </h3>
                                     <h3>
                                         <?php
+                                        // henter navn til kunden som bestillte
                                         if ($result[$i - 1]['Navn'] !== null) {
                                             echo $result[$i - 1]['Navn'];
                                         } else {
@@ -99,6 +102,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                                     <P></P>
                                 </div>
                                 <?php
+                                // viser produktene i bestillingen
                                 $produktArr = $result[$i - 1]['produkter'];
                                 $produktArr = explode(',', $produktArr);
                                 $antallArr = $result[$i - 1]['antall'];
@@ -140,7 +144,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
             <div class="tab-con">
                 <div class="main-ordre-container">
                     <?php
-
+                    // same as above, men med noen endringer (burde vært funksjon)
                     if ($_GET['page2']) {
                         $page2 = $_GET['page2'];
                     } else {
@@ -274,6 +278,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                         </tr>
                         <?php
                         for ($i = $startValue; $i <= $forLong; $i++) {
+                            // henter kunder i databasen og viser de i en tabell
                             ?>
                             <tr>
                                 <td><?php echo $result[$i - 1]['ID'] ?></td>
@@ -298,6 +303,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
             </div>
             <div class="tab-con">
                 <?php
+                // setter inn siden for å lage et nytt produkt
                 include('nytt_produktF.php');
                 ?>
 
@@ -308,6 +314,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
         ?>
         <div class="tab-con">
             <?php
+            // Lar deg endre din bruker info
             $userToEdit = $_SESSION['id'];
             include("../komponenter/userInfo.php")
 

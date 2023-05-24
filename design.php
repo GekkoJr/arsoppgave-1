@@ -32,6 +32,7 @@ include("komponenter/header.html");
                 <div id="color1">
                 </div>
                 <!-- klasse navnene her er ikke brukt til annent en forklare funksjonen til blocken -->
+                <!-- ja disse burde vært komponenter -->
                 <div class="fargeinfo">
                     <div class="separatorBetweenExplainAndCodes">
                         <div class="codes">

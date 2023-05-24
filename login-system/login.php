@@ -11,10 +11,12 @@ $password = stripslashes($password);
 $username = mysqli_real_escape_string($connect, $username);
 $password = mysqli_real_escape_string($connect, $password);
 
+// henter brukeren hvor mail addresen mtvher
 $query = "SELECT passord, ID, admin, ordePerson FROM brukere WHERE mail = '$username'"; //henter passordet knyttet til eposten, returnerer bare en rad pga sjekken om emailen er i databasen
 $login = mysqli_query($connect, $query); // spør databasen om brukere som matcher
 $row = mysqli_fetch_array($login, MYSQLI_ASSOC); // flytter data inn i en array
 
+// verifiserer passordet
 if(password_verify($password, $row['passord'])) {
     echo "login succes";
     $_SESSION['id'] = $row['ID'];

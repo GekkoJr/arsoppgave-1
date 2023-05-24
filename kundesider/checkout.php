@@ -2,7 +2,7 @@
 session_start();
 include("../tilkoble.php");
 $connect->select_db("users");
-
+// om handlekurven eksisterer regn ut prisen av det oppi den
 if ($_SESSION['handlekurv']) {
     $index = 0;
     $pris = 0;
@@ -54,6 +54,7 @@ include("../komponenter/meta.php");
                 </div>
 
                 <?php
+                // henter navn og epost om brukeren ikke har en bruker ennda
                 if (!$_SESSION['id']) {
                     ?>
                     <hr>

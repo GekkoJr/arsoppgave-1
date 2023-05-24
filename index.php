@@ -2,7 +2,7 @@
 session_start();
 include("tilkoble.php");
 $connect->select_db("users");
-
+// henter produkter
 $query = "SELECT proID, image, proNavn, miniBeskriv, pris, dirNavn FROM produkter";
 $result = mysqli_query($connect, $query);
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -23,6 +23,7 @@ include("komponenter/header.html")
     <h3 style="text-align: center">Kunne dette vært interessant?</h3>
         <div class="product-gallery" style="justify-content: center; margin-bottom: 20px">
         <?php
+        // henter 4 produkter å vise
         while ($count !== 0) {
             $count--;
             $dirNavn = $rows[$count]['dirNavn'];

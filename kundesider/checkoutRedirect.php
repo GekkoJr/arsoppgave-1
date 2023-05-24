@@ -5,6 +5,7 @@ error_reporting(0)
 <html lang="en">
 <body>
 <?php
+// dette dokumentet ber brukeren logge inn får å se alle sine ordre
 $title = "Redirigerer";
 include("../komponenter/meta.php"); ?>
 <body>

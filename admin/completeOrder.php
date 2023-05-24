@@ -2,7 +2,7 @@
 session_start();
 include('../tilkoble.php');
 if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
-
+    // henter hvilken bestilling som skal endres og setter den til fullført
     $ordre = $_GET['item'];
 
     $connect->select_db('users');

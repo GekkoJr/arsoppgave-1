@@ -18,6 +18,7 @@ $connect->select_db("users");
         <br class="toHide">
     </div>
     <?php
+    // henter tingene i handlekurven om du har handlet noe
     if ($_SESSION['handlekurv']) {
         $index = 0;
         foreach ($_SESSION['handlekurv'] as $element) {

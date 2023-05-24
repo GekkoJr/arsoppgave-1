@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 include("../komponenter/meta.php")
+// alt denne siden gjør er å hente data og yeete det inn i php
 ?>
 
 <body>

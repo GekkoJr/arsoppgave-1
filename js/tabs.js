@@ -4,6 +4,7 @@ let index2 = 0;
 
 fjern()
 
+// henter alle fanene
 tabs.forEach(element => {
     let tall = index2;
     element.addEventListener("click", () => {
@@ -15,6 +16,7 @@ tabs.forEach(element => {
 })
 
 div[0].style.display = "flex"
+// bytter til et nytt
 function fjern() {
     div.forEach(element => {
         element.style.display = "none";

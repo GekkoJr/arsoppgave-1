@@ -1,17 +1,19 @@
 <?php
 include("../tilkoble.php");
 $connect ->select_db("users");
-
+// henter inn info
 $navn = $_POST['navn'];
 $mail = $_POST['mail'];
 $pass = $_POST['pass'];
 $etterNavn = $_POST['etterNavn'];
 
+// passer på at ingen er tomme
 if($navn == "" || $mail == "" || $pass == "" || $etterNavn == "") {
     echo "Et eller flere felt er tomme";
     echo "<a href=signup.html> Prøv igjen </a>";
 } else {
 
+    // sjekker om brukerern eksysterer
     $query0 = "SELECT * FROM brukere WHERE mail = '$mail'";
     $eksi = mysqli_query($connect, $query0);
     $row = mysqli_fetch_array($eksi, MYSQLI_ASSOC); // flytter data inn i en array
@@ -29,11 +31,12 @@ if($navn == "" || $mail == "" || $pass == "" || $etterNavn == "") {
         $pass = mysqli_real_escape_string($connect, $pass);
         $pass = password_hash($pass, CRYPT_SHA512);
 
-
+        // legger inn brukeren
         $query = "INSERT INTO brukere (navn, etternavn, mail, passord, admin) VALUES ('$navn', '$etterNavn', '$mail', '$pass', 0)";
 
         if (mysqli_query($connect, $query)) {
             echo "ny bruker opprettet, du kan nå logge inn";
+            header("Location: loginf.php");
         } else {
             echo "Feil i oppretning av bruker, prøv igjenn senere";
         }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
+// redirigerer deg om du er logget inn
 if($_SESSION['id']) {
     if($_SESSION['admin'] === true) {
     header('Location: ../admin/dashboard.php');
@@ -17,6 +18,7 @@ if($_SESSION['id']) {
 <html lang="en">
 
 <?php
+// viser at den er logget inn
 include("../komponenter/meta.php")
 ?>
 

@@ -49,17 +49,17 @@ if ($_POST['antall']) {
             array_push($_SESSION['mengde'], $_POST['antall']);
         }
     } else {
+        // oppreter handlekurv om den ikke eksisterer
         $_SESSION['handlekurv'] = array();
         $_SESSION['mengde'] = array();
         array_push($_SESSION['handlekurv'], $produktID);
         array_push($_SESSION['mengde'], $_POST['antall']);
     }
     ?>
-    <script>
-        alert("produktet er lagt i handlevognen")
-    </script>
+
     <?php
 }
+// Laster inn produktet
 ?>
 <main>
     <h1><?php echo $proNavn ?></h1>
@@ -67,6 +67,7 @@ if ($_POST['antall']) {
     <div class="produkt">
         <div class="img-slide-container">
             <?php
+            // setter inn bildene
             foreach ($images as $src) {
                 $src = "product_img/" . $dirNavn . "/" . $src;
                 ?>
@@ -88,6 +89,7 @@ if ($_POST['antall']) {
                 <input style="display:none" value="<?php echo $produktID; ?>" name="leggTil">
                 <p>Antall</p>
                 <?php
+                // viser forskjellig tekst om det er forskjellige mengder av et produkt.
                 include("komponenter/select_number.php");
                 if ($produkt['Antall'] > 50) {
                     ?> <p class="tiny">Det er 50+ produkter på nettlager</p> <?php

@@ -21,6 +21,8 @@ include("komponenter/meta.php") ?>
 <main>
     <div class="product-gallery">
         <?php
+        // viser alle produkter
+        // TODO: legg til limiter fra dashboard
         while ($count !== 0) {
             $count--;
             $dirNavn = $rows[$count]['dirNavn'];

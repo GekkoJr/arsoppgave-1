@@ -3,6 +3,9 @@ session_start();
 error_reporting(1);
 include("../tilkoble.php");
 $connect->select_db("users");
+
+// For å endre bruker greier (kun adnmin)
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -18,7 +21,7 @@ include("../komponenter/header.html")
 <?php
 if ($_SESSION['admin'] === true) {
     $userToEdit = $_GET['user'];
-
+    // henter inn bruker edit med bruker for å redigere
     include("../komponenter/userInfo.php");
 
 } else {

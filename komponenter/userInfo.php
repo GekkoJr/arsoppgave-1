@@ -3,7 +3,7 @@
 $userToEdit = mysqli_real_escape_string($connect, $userToEdit);
 $query = "SELECT * from brukere where ID='$userToEdit'";
 $result = mysqli_fetch_array(mysqli_query($connect, $query), MYSQLI_ASSOC);
-
+// DETTE DOKUMENTET VISER BARE BRUKEREN SIN INFO
 
 ?>
 <form method="post" action="/komponenter/updateUserInfo.php">

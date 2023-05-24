@@ -13,6 +13,7 @@ $produkter = $_SESSION['handlekurv'];
 $prisPer = array();
 $sum = 0;
 
+// rengner ut total pris
 foreach ($produkter as $element) {
     $query = "SELECT * From produkter WHERE proID = '$element'";
     $result = mysqli_query($connect, $query);
@@ -23,9 +24,11 @@ foreach ($produkter as $element) {
     $sum = $sum + $pris;
 }
 
+// gjør om til strings for databasen
 $prisPerS = implode(', ', $prisPer);
 $produkterS = implode(', ', $produkter);
 
+// om det er betalt legg det til i databasen
 if ($_POST['paid']) {
     if (!$_SESSION['id']) {
         $fornavn = mysqli_real_escape_string($connect, $_POST['fornavn']);
