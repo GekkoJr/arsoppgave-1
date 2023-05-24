@@ -65,7 +65,6 @@ main {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-
   a div {
     max-width: #{$netbutikkImgSize};
   }
@@ -163,6 +162,7 @@ a {
 
 .img-slide-container {
   flex: 2;
+  position: relative;
 }
 
 .slide-img {
@@ -184,20 +184,29 @@ a {
 
 .tilbake, .frem {
   cursor: pointer;
-  /* position absolute*/
-  top: 200px;
+  position: absolute;
+  top: 48%;
   width: auto;
   padding: 4px;
   color: #{$text};
   font-weight: bold;
-  font-size: 28px;
+  font-size: 40px;
   transition: 0.6s ease;
   border-radius: 5px;
+  border: none;
 
+  &:hover {
+    border: none;
+    scale: 1.1;
+  }
 }
 
 .frem {
-  left: 0
+  right: 15px
+}
+
+.tilbake {
+  left: 15px;
 }
 
 .slide-overgang {
@@ -807,7 +816,7 @@ article {
   main {
     width: 100%;
   }
-
+  // header
   header div div a img {
     height: 20px;
   }
@@ -839,7 +848,7 @@ article {
     width: 20px;
     height: auto;
   }
-
+  // nettbutikk
   .product-gallery {
     justify-content: center;
   }
@@ -852,7 +861,7 @@ article {
       flex: 100%;
     }
   }
-
+  // produktside
   .kjop-container {
     height: fit-content;
     margin-bottom: 10px;
@@ -865,7 +874,7 @@ article {
   .toHide {
     display: none;
   }
-
+  // handlekurv
   .handlekurv-item {
     grid-template-columns: repeat(4, auto);
 
@@ -878,32 +887,13 @@ article {
     }
 
     div div.AntallVelger {
-      border: 1px solid $text;
-      border-radius: 10px;
       max-width: 50px;
-      display: flex;
-      max-height: 30px;
-      background-color: #{$backgroundColor};
 
       input, p {
-        flex: 1;
         height: 25px;
-        text-align: center;
-        margin: auto;
         font-size: 15px;
       }
-
-      p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
     }
-
   }
 
   #login-form {
@@ -939,9 +929,18 @@ article {
 
   .grid3x1 {
     grid-template-columns: auto;
+
     input {
       width: 95%;
       height: 35px;
+    }
+  }
+
+  .codes {
+    flex-wrap: nowrap;
+
+    div {
+      flex: 1;
     }
   }
 }
