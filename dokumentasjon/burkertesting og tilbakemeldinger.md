@@ -8,3 +8,7 @@
 - Dashboarded er ubrukelig på mobil 
 - produktet er halvert på mobil
 - Handlekurven overflower på mobil
+
+
+
+- burde være totalt i handlevognen 
