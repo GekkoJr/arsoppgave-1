@@ -44,6 +44,8 @@ if ($_POST['paid']) {
         $query = "INSERT INTO ordre (produkter, prisPerStk, pris, kundeID, addresee, postnr, city, antall, status) VALUES ('$produkterS', '$prisPerS', '$sum', '$kundeID', '$addresse', '$postnr', '$by', '$antall', '$status')";
         mysqli_query($connect, $query);
     }
+    unset($_SESSION['handlekurv']);
+    unset($_SESSION['mengde']);
     header("Location: ../nettbutikk.php");
 } else {
     echo "Error: Betaling failed";

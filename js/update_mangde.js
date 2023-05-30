@@ -13,8 +13,10 @@ plussMinus.forEach(element => {
 function addEvent(element, type) {
     element.addEventListener(type, () => {
         update();
+        pris();
     })
 }
+
 // når mengden i handlekurven endre seg
 function update() {
     // datan som skal sender begynner tom
@@ -42,4 +44,14 @@ function update() {
         totalPris[index].textContent = element.value * parseInt(priser[index].textContent)
         index++;
     })
+}
+
+ let sumPris = 0;
+function pris() {
+    totalPris.forEach(element => {
+        sumPris += parseInt(element.textContent)
+
+    })
+    document.getElementById("totalpris").textContent = sumPris;
+    sumPris = 0;
 }

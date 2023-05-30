@@ -21,52 +21,60 @@ $connect->select_db("users");
     // henter tingene i handlekurven om du har handlet noe
     if ($_SESSION['handlekurv']) {
         $index = 0;
-        foreach ($_SESSION['handlekurv'] as $element) {
-            $query = "SELECT * from produkter WHERE proID = '$element'";
-            $result = mysqli_query($connect, $query);
-            $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    foreach ($_SESSION['handlekurv'] as $element) {
+        $query = "SELECT * from produkter WHERE proID = '$element'";
+        $result = mysqli_query($connect, $query);
+        $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-            $images = explode(" ", $result['image']);
-            $image = "../product_img/" . $result['dirNavn'] . "/" . $images[0];
-
-            ?>
-            <form action="fjern_item.php" method="post">
-                <input value="<?php echo $result['proID'] ?>" style="display: none" name="id">
-                <div class="handlekurv-item" id="<?php echo $result['proID'] ?>">
-                    <img src="<?php echo $image ?>" alt="<?php echo $result['miniBeskriv'] ?>">
-                    <div>
-                        <h3><?php echo $result['proNavn'] ?></h3>
-                        <p><?php echo $result['miniBeskriv'] ?></p>
-                    </div>
-                    <div>
-                        <?php
-                        $defultValue = $_SESSION['mengde'][$index];
-                        include("../komponenter/select_number.php")
-                        ?>
-                    </div>
-                    <p class="handlekurv-tall pris"><?php echo $result['pris'] ?></p>
-                    <p class="handlekurv-tall totPris"><?php echo $_SESSION['mengde'][$index] * $result['pris'] ?></p>
-                    <button type="submit">&#9747;</button>
-                </div>
-            </form>
-        <?php
-        $index++;
-        }
+        $images = explode(" ", $result['image']);
+        $image = "../product_img/" . $result['dirNavn'] . "/" . $images[0];
 
         ?>
-            <div>
-                <form id="checkoutBtn" action="checkoutRedirect.php">
-                    <button type="submit">Gå til checkout</button>
-                </form>
+        <form action="fjern_item.php" method="post">
+            <input value="<?php echo $result['proID'] ?>" style="display: none" name="id">
+            <div class="handlekurv-item" id="<?php echo $result['proID'] ?>">
+                <img src="<?php echo $image ?>" alt="<?php echo $result['miniBeskriv'] ?>">
+                <div>
+                    <h3><?php echo $result['proNavn'] ?></h3>
+                    <p><?php echo $result['miniBeskriv'] ?></p>
+                </div>
+                <div>
+                    <?php
+                    $defultValue = $_SESSION['mengde'][$index];
+                    include("../komponenter/select_number.php")
+                    ?>
+                </div>
+                <p class="handlekurv-tall pris"><?php echo $result['pris'] ?></p>
+                <p class="handlekurv-tall totPris"><?php echo $_SESSION['mengde'][$index] * $result['pris'] ?></p>
+                <button type="submit">&#9747;</button>
             </div>
-            <script src="/js/velgAntall.js"></script>
-            <script src="/js/update_mangde.js"></script>
-            <?php
+        </form>
+    <?php
+    $index++;
+    }
+
+    ?>
+        <div class="handlekurv-item">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>Sum:</p>
+            <p id="totalpris">ND</p>
+            <p></p>
+        </div>
+        <div>
+            <form id="checkoutBtn" action="checkoutRedirect.php">
+                <button type="submit">Gå til checkout</button>
+            </form>
+        </div>
+        <script src="/js/velgAntall.js"></script>
+        <script src="/js/update_mangde.js"></script>
+    <?php
 
     } else {
-        ?>
-    <h1 class="center">Du har ingen produkter i handlevognen</h1>
-    <?php
+    ?>
+        <h1 class="center">Du har ingen produkter i handlevognen</h1>
+        <?php
     }
     ?>
 

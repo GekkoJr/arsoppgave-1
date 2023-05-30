@@ -41,7 +41,7 @@ include("komponenter/meta.php") ?>
                     </div>
                     <div class="mini-txt">
                         <h4><?php echo $proNavn ?></h4>
-<!--                        <p class="mini-beskriv">--><?php //echo $miniBe ?><!--</p>-->
+                        <!--                        <p class="mini-beskriv">--><?php //echo $miniBe ?><!--</p>-->
                         <p><?php echo $pris . ' kr' ?></p>
                     </div>
                 </div>

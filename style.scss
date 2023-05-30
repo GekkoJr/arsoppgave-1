@@ -61,10 +61,13 @@ main {
   }
 }
 
+
 .product-gallery {
   display: flex;
   gap: 15px;
+  margin: auto;
   flex-wrap: wrap;
+  width: auto;
   a div {
     max-width: #{$netbutikkImgSize};
   }
