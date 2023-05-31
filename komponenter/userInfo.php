@@ -41,6 +41,11 @@ $result = mysqli_fetch_array(mysqli_query($connect, $query), MYSQLI_ASSOC);
             <?php
         }
         ?>
-        <button style="margin-top: 10px; display: block " type="submit" class="generic-button">Save</button>
+        <div style="display: flex">
+            <button style="margin-top: 10px; display: block " type="submit" class="generic-button">Save</button>
+            <a href="/login-system/logout.php" style="border: none; ">
+                <button class="generic-button" style="margin-top: 10px; margin-left: 10px">Logg ut</button>
+            </a>
+        </div>
     </div>
 </form>

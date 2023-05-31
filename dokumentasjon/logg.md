@@ -1,8 +1,7 @@
 ### Hva funker fra tidligere 
 Hele innlogging systemet og basic produkt oppretning
-## Plan for uke 2
 
-
+Mer nøyaktig logg av koden er på git
 
 ### Plan for uken
  Mandag - begynne på å tillate flere en et bilde per produkt: lagres i en array
@@ -52,9 +51,12 @@ Hele innlogging systemet og basic produkt oppretning
 - [x] Fullføre nettside 
 - [x] Starte bruker testing
 
-### Hva skal skje videre
-- en hjemmeside
-- Brukertesting
+### Uke 8 (siste)
+- [x] Reklame
+- [x] Dokumentasjon og guider
+- [x] Levere
+
+### Hva skal skje videre 
 - gjøre det mulig å sortere nettbutikken
 - en søk funksjon for produkter
 - redigering av produkter

@@ -39,6 +39,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                 }
                 ?>
                 <h3 class="tab">Din info</h3>
+
             </div>
             <div class="tab-con">
                 <div class="main-ordre-container">
@@ -125,8 +126,8 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                                     $proIndex++;
                                 }
                                 ?>
-                                <a href="completeOrder.php?item=<?php echo $result[$i-1]['ordreNr'] ?>">
-                                <button class="generic-button">fullfør ordre</button>
+                                <a href="completeOrder.php?item=<?php echo $result[$i - 1]['ordreNr'] ?>">
+                                    <button class="generic-button">fullfør ordre</button>
                                 </a>
                             </div>
                         </div>
@@ -287,7 +288,9 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
                                 <td><?php echo $result[$i - 1]['mail'] ?></td>
                                 <td><?php echo $result[$i - 1]['ordePerson'] ?></td>
                                 <td><?php echo $result[$i - 1]['admin'] ?></td>
-                                <td><a href="<?php echo "editUser.php?user=" . $result[$i - 1]['ID'] ?>"><button>Rediger</button></a> </td>
+                                <td><a href="<?php echo "editUser.php?user=" . $result[$i - 1]['ID'] ?>">
+                                        <button>Rediger</button>
+                                    </a></td>
 
                             </tr>
                             <?php
@@ -319,6 +322,7 @@ if ($_SESSION['admin'] === true || $_SESSION['ordePerson'] === true) {
             include("../komponenter/userInfo.php")
 
             ?>
+
         </div>
 
         <script src="/js/dropdown.js"></script>

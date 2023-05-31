@@ -35,6 +35,7 @@ if(password_verify($password, $row['passord'])) {
 
 } else {
     echo "Feil bruker navn eller passord";
+    header("Location: loginf.php");
 }
 
 $count = mysqli_num_rows($login); // sjekker hvor mange rader som eksiterer med de spesifikasjonene og lagrer de
