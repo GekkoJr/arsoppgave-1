@@ -54,11 +54,11 @@ $connect->select_db("users");
     }
 
     ?>
-        <div class="handlekurv-item">
+        <div style="border-bottom: none" class="handlekurv-item">
             <p></p>
             <p></p>
-            <p></p>
-            <p>Sum:</p>
+            <p class="toHide"></p>
+            <p class="handlekurv-total">Totalt:</p>
             <p id="totalpris">ND</p>
             <p></p>
         </div>

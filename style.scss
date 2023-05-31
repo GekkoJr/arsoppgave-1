@@ -67,7 +67,7 @@ main {
   gap: 15px;
   margin: auto;
   flex-wrap: wrap;
-  width: auto;
+  justify-content: center;
   a div {
     max-width: #{$netbutikkImgSize};
   }
@@ -885,7 +885,7 @@ article {
       font-size: 15px;
     }
 
-    img, :nth-child(4) {
+    img, :nth-child(4):not([class="handlekurv-total"]) {
       display: none;
     }
 

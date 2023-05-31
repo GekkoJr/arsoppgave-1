@@ -17,6 +17,8 @@ function addEvent(element, type) {
     })
 }
 
+
+
 // når mengden i handlekurven endre seg
 function update() {
     // datan som skal sender begynner tom
@@ -55,3 +57,6 @@ function pris() {
     document.getElementById("totalpris").textContent = sumPris;
     sumPris = 0;
 }
+
+update();
+pris();
